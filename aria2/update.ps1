@@ -1,0 +1,1 @@
+curl https://ngosang.github.io/trackerslist/trackers_best.txt | Where-Object { $_ -ne ""} | Join-String -Separator ',' |  ForEach-Object {$_ -replace "^", "bt-tracker="} | Add-Content -Path .aria2.conf
