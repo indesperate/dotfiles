@@ -1,0 +1,45 @@
+let mapleader="\<space>"
+nnoremap <leader>w :w!<CR>
+nnoremap <leader>q :q!<CR>
+
+"jump between open files
+nnoremap <leader>j :bprevious<CR>
+nnoremap <leader>k :bnext<CR>
+
+"rename functions variables
+nnoremap <leader>r :action RenameElement<CR>
+
+inoremap <c-j> <c-o>:action CodeCompletion<CR>
+
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-h> <c-w>h
+nnoremap <c-k> <c-w>k
+
+nnoremap gD :action GotoDeclaration<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gr :action GotoSymbol<CR>
+nnoremap <leader>[ :action GotoNextError<CR>
+nnoremap <leader>] :action GotoPreviousError<CR>
+
+"sorround with snippets such as if
+nnoremap <leader>s :action SurroundWith<CR>
+vnoremap <leader>s :action SurroundWith<CR>
+
+"insert template code such as if, main method
+noremap <leader>i :action InsertLiveTemplate<CR>
+
+"comment one line
+nnoremap <leader>/ :action CommentByLineComment<CR>
+vnoremap <leader>/ :action CommentByLineComment<CR>
+
+"formatcode
+nnoremap = :action ReformatCode<CR>
+vnoremap = :action ReformatCode<CR>
+
+nnoremap <leader>a :action<space>
+set NERDTree
+nnoremap <leader>e :NERDTreeToggle<CR>
+set easymotion
+
+set keep-english-in-normal-and-restore-in-insert

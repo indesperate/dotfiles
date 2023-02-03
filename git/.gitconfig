@@ -1,0 +1,10 @@
+[user]
+	name = indesperate
+	email = indesperate@outlook.com
+[core]
+	editor = \"C:\\Users\\fadei\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
+	autocrlf = true
+[diff]
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE

@@ -1,0 +1,24 @@
+let mapleader="\<space>"
+inoremap <c-p> <c-o>:vsc Edit.ParameterInfo<CR>
+nnoremap gd :vsc Edit.GoToDefinition<CR>
+nnoremap gD :vsc Edit.GoToDeclaration<CR>
+nnoremap gr :vsc Edit.FindAllReferences<CR>
+nnoremap gi :vsc Edit.GoToImplementation<CR>
+nnoremap <K> :vsc Edit.QuickInfo<CR>
+nnoremap <leader>a :vsc View.QuickActions<CR>
+nnoremap <leader>s :vsc Edit.SurroundWith<CR>
+vnoremap <leader>s :vsc Edit.SurroundWith<CR>
+nnoremap <leader>i :vsc Edit.InsertSnippet<CR>
+nnoremap <leader>/ :vsc Edit.ToggleBlockComment<CR>
+vnoremap <leader>/ :vsc Edit.ToggleBlockComment<CR>
+nnoremap <c-i> :vsc View.NavigateForward<CR>
+nnoremap <c-o> :vsc View.NavigateBackward<CR>
+nnoremap <c-p> :vsc Edit.GotoFile<CR>
+nnoremap <leader>g :vsc Edit.GoTo
+nnoremap <leader>r :vsc Refactor.Rename<CR>
+nnoremap <leader>k :vsc Window.NextTab<CR>
+nnoremap <leader>j :vsc Window.PreviousTab<CR>
+nnoremap <leader>[ :vsc View.NextError<CR>
+nnoremap <leader>] :vsc View.PreviousError<CR>
+set ignorecase
+set smartcase

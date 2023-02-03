@@ -1,0 +1,6 @@
+ServerAliveInterval 20
+ServerAliveCountMax 999
+Host fadei
+    HostName 101.35.119.100
+    User fadei
+    Port 22

@@ -1,0 +1,12 @@
+{
+  "lastUpdate": "2022-05-08T10:29:53.6838535+08:00",
+  "aria2-enabled": true,
+  "aria2-warning-enabled": false,
+  "proxy": "127.0.0.1:10809",
+  "SCOOP_REPO": "https://github.com/ScoopInstaller/Scoop",
+  "SCOOP_BRANCH": "master",
+  "aria2-split": 16,
+  "aria2-max-connection-per-server": 16,
+  "aria2-min-split-size": "4M",
+  "aria2-retry-wait": 4
+}
