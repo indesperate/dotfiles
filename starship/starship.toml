@@ -1,0 +1,146 @@
+palette = "indesperate"
+format = """
+$os\
+[](grey)\
+$shell\
+[](grey)\
+$username\
+$hostname\
+[ ](yellow)\
+$directory\
+[](yellow)\
+$git_branch\
+$git_status\
+[ ](lightblue)\
+$cmd_duration\
+[](lightblue)\
+$python\
+$conda\
+$c\
+\n$character\
+"""
+add_newline = false
+
+[git_branch]
+symbol = ""
+style = "fg:dark bg:green"
+format = """
+[ ](green)\
+[ $symbol$branch]($style)\
+"""
+
+[git_status]
+style = "fg:dark bg:green"
+format = """
+[ $all_status$ahead_behind]($style)\
+[](green)\
+"""
+
+[character]
+# Note the use of Catppuccin color 'maroon'
+success_symbol = "[❯](cblue)"
+error_symbol = "[❯](maroon)"
+disabled = false
+
+[directory]
+read_only = " 󰌾"
+style = "fg:dark bg:yellow"
+format = "[   $path$read_only ]($style)"
+disabled = false
+truncation_symbol = ".../"
+fish_style_pwd_dir_length = 2
+
+[cmd_duration]
+min_time = 0
+format = "[ $duration]($style)"
+style = "fg:black bg:lightblue"
+disabled = false
+
+
+[shell]
+fish_indicator = "󰈺 "
+bash_indicator = " "
+powershell_indicator = " "
+format = "[$indicator]($style)"
+style = "fg:black bg:grey"
+disabled = false
+
+[username]
+disabled = false
+style_root = "red"
+style_user = "purple"
+format = """
+[ ]($style)\
+[ $user](bg:$style fg:black)\
+[]($style)\
+"""
+[hostname]
+disabled = false
+ssh_symbol = " "
+format = """
+[ ](purple)\
+[$ssh_symbol](bg:purple fg:black)[$hostname](bg:purple fg:black)\
+[](purple)\
+"""
+
+[os]
+style = "fg:white bg:black"
+format = "[$symbol]($style)"
+disabled = false
+
+
+[os.symbols]
+Android = " "
+Arch = " "
+CentOS = " "
+Debian = " "
+Linux = " "
+Macos = " "
+Ubuntu = " "
+Windows = "󰍲 "
+
+[python]
+symbol = " "
+style = "bg:blue fg:black"
+version_format = "${major}.${minor}"
+format = """
+ [](blue)\
+[${symbol}${pyenv_prefix}(${version})(( $virtualenv))]($style)\
+[](blue)\
+"""
+disabled = false
+
+[conda]
+style = "bg:green fg:black"
+symbol = "🅒 "
+disabled = false
+format = """
+ [](green)\
+[$symbol$environment]($style)\
+[](green)\
+"""
+
+[c]
+style = "bg:peach fg:black"
+symbol = " "
+detect_extensions = [ "c", "h", "cpp", "cc", "hpp" ]
+version_format = "${major}.${minor}"
+format = """
+ [](peach)\
+[$symbol($version(-$name))]($style)\
+[](peach)\
+"""
+disabled = false
+
+
+[palettes.indesperate]
+blue = "#0077c2"
+yellow = "#ff9248"
+dark = "#2d3436"
+green = "#a6e3a1"
+lightblue = "#2e9599"
+red = "#f38ba8"
+grey = "#a3aed2"
+cblue = "#89b4fa"
+peach = "#fab387"
+purple = "#cba6f7"
