@@ -1,4 +1,5 @@
 palette = "indesperate"
+continuation_prompt = "[❯](cblue) "
 format = """
 $os\
 [](grey)\
