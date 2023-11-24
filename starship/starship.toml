@@ -40,7 +40,7 @@ format = """
 [character]
 # Note the use of Catppuccin color 'maroon'
 success_symbol = "[❯](cblue)"
-error_symbol = "[❯](maroon)"
+error_symbol = "[❯](red)"
 disabled = false
 
 [directory]
