@@ -87,7 +87,7 @@ format = """
 """
 
 [os]
-style = "fg:white bg:black"
+style = "fg:white"
 format = "[$symbol]($style)"
 disabled = false
 
