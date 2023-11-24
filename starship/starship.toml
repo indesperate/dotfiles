@@ -62,6 +62,7 @@ disabled = false
 [shell]
 fish_indicator = "󰈺 "
 bash_indicator = " "
+zsh_indicator = "󰬡 "
 powershell_indicator = " "
 format = "[$indicator]($style)"
 style = "fg:black bg:grey"
