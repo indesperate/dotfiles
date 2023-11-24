@@ -14,6 +14,7 @@ $git_status\
 [ ](lightblue)\
 $cmd_duration\
 [](lightblue)\
+$time\
 $python\
 $conda\
 $c\
@@ -123,7 +124,7 @@ format = """
 [c]
 style = "bg:peach fg:black"
 symbol = " "
-detect_extensions = [ "c", "h", "cpp", "cc", "hpp" ]
+detect_extensions = ["c", "h", "cpp", "cc", "hpp"]
 version_format = "${major}.${minor}"
 format = """
  [](peach)\
@@ -131,6 +132,16 @@ format = """
 [](peach)\
 """
 disabled = false
+
+[time]
+disabled = false
+style = "bg:cblue fg:black"
+time_format = "%H:%M"
+format = """
+ [](cblue)\
+[ $time]($style)\
+[](cblue)\
+"""
 
 
 [palettes.indesperate]
