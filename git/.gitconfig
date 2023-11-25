@@ -1,10 +1,12 @@
 [user]
-	name = indesperate
-	email = indesperate@outlook.com
+name = indesperate
+email = indesperate@outlook.com
 [core]
-	editor = \"C:\\Users\\fadei\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
-	autocrlf = true
+editor = nvim
+fsmonitor = true
+untrackedcache = true
+autocrlf = true
 [diff]
-    tool = default-difftool
+tool = default-difftool
 [difftool "default-difftool"]
-    cmd = code --wait --diff $LOCAL $REMOTE
+cmd = code --wait --diff $LOCAL $REMOTE

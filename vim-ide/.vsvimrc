@@ -20,5 +20,6 @@ nnoremap <leader>k :vsc Window.NextTab<CR>
 nnoremap <leader>j :vsc Window.PreviousTab<CR>
 nnoremap <leader>[ :vsc View.NextError<CR>
 nnoremap <leader>] :vsc View.PreviousError<CR>
+nnoremap <leader>n :vsc View.SolutionExplorer<CR>
 set ignorecase
 set smartcase
