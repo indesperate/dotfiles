@@ -59,12 +59,25 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [ -d "$HOME/.local/bin" ]; then
-  export PATH="$HOME/.local/bin:$PATH"
+if [ -d "$HOME/bin" ] ; then
+    if [ "$PATH" = "${PATH//$HOME\/bin/}" ] ; then
+        export PATH="$HOME/bin${PATH:+:${PATH}}"
+    fi
 fi
-if [ -d "$HOME/.local/lib" ]; then
-  export LD_LIBRARY_PATH=$HOME/.local/lib${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-  export LIBRARY_PATH=$HOME/.local/lib${LIBRARY_PATH:+:${LIBRARY_PATH}}
+
+if [ -d "$HOME/.local/bin" ] ; then
+    if [ "$PATH" = "${PATH//$HOME\/.local\/bin/}" ] ; then
+        export PATH="$HOME/.local/bin${PATH:+:${PATH}}"
+    fi
+fi
+
+if [ -d "$HOME/.local/lib" ] ; then
+    if [ "$LD_LIBRARY_PATH" = "${LD_LIBRARY_PATH//$HOME\/.local\/lib/}" ] ; then
+        export LD_LIBRARY_PATH=$HOME/.local/lib${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+    fi
+    if [ "$LIBRARY_PATH" = "${LIBRARY_PATH//$HOME\/.local\/lib/}" ] ; then
+        export LIBRARY_PATH=$HOME/.local/lib${LIBRARY_PATH:+:${LIBRARY_PATH}}
+    fi
 fi
 
 bind -m vi-command "v":edit-and-execute-command
