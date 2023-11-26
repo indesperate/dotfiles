@@ -37,6 +37,8 @@ fi
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
+notify-send() { wsl-notify-send.exe --category "$WSL_DISTRO_NAME" "$@"; }
+
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
