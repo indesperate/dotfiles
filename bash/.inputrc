@@ -12,5 +12,6 @@ set revert-all-at-newline on
 set menu-complete-display-prefix on
 set completion-ignore-case on
 set show-all-if-ambiguous on
+set keyseq-timeout 0
 Tab:menu-complete
 "\e[Z":menu-complete-backward
