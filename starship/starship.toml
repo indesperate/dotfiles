@@ -11,6 +11,7 @@ $hostname\
 $directory\
 [](yellow)\
 $git_branch\
+$git_commit\
 $git_status\
 [ ](lightblue)\
 $cmd_duration\
@@ -29,6 +30,13 @@ style = "fg:dark bg:green"
 format = """
 [ ](green)\
 [ $symbol$branch]($style)\
+"""
+
+[git_commit]
+style = "fg:dark bg:green"
+format = """
+[ ](green)\
+[ $hash]($style)\
 """
 
 [git_status]
