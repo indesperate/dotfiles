@@ -2,6 +2,7 @@ Import-Module Posh-Git
 Import-Module Terminal-Icons
 Import-Module '~\scoop\apps\gsudo\current\gsudoModule.psd1'
 Import-Module Catppuccin
+Import-Module PSFzf
 $Flavor = $Catppuccin['Mocha']
 
 # oh-my-posh init pwsh --config "~/Documents/PowerShell/my.omp.json" | Invoke-Expression
