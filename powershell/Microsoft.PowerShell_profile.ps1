@@ -67,11 +67,8 @@ $ENV:FZF_DEFAULT_OPTS = @"
 
 
 # alias
-Set-Alias base '~\Desktop\Learn\Python\Base\Scripts\Activate.ps1'
-Set-Alias less 'C:\Program Files\Git\usr\bin\less.exe'
-Set-Alias tig 'C:\Program Files\Git\usr\bin\tig.exe'
+Set-Alias base '$PATH$\Base\Scripts\Activate.ps1'
 Set-Alias vim nvim
-function fzfv{fzf --preview 'bat --color \"always\" {}'}
 function which ($Command) {
 	Get-Command -Name $Command -ErrorAction SilentlyContinue |
 		Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
