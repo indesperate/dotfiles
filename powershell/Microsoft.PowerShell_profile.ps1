@@ -9,14 +9,14 @@ Invoke-Expression (&starship init powershell)
 zoxide init --hook 'pwd' powershell | Out-String | Invoke-Expression
 # vimode
 $OnViModeChange = [scriptblock] {
-    if ($args[0] -eq 'Command') {
-        # Set the cursor to a blinking block.
-        Write-Host -NoNewLine "`e[1 q"
-    }
-    else {
-        # Set the cursor to a blinking line.
-        Write-Host -NoNewLine "`e[5 q"
-    }
+	if ($args[0] -eq 'Command') {
+		# Set the cursor to a blinking block.
+		Write-Host -NoNewLine "`e[1 q"
+	}
+	else {
+		# Set the cursor to a blinking line.
+		Write-Host -NoNewLine "`e[5 q"
+	}
 }
 
 $Colors = @{
@@ -47,14 +47,17 @@ $Colors = @{
 	Type                   = $Flavor.Yellow.Foreground()
 	Variable               = $Flavor.Lavender.Foreground()
 }
-$env:EDITOR='nvim'
+$env:EDITOR = 'nvim'
 
 # Set-PSReadLineKeyHandler -Chord Ctrl+i -ViMode Insert -Function PossibleCompletions
 Set-PsReadLineOption  `
-    -EditMode Vi -ViModeIndicator Script `
-    -ViModeChangeHandler $OnViModeChange `
-    -PredictionViewStyle ListView `
-    -Colors $Colors
+	-EditMode Vi -ViModeIndicator Script `
+	-ViModeChangeHandler $OnViModeChange `
+	-PredictionViewStyle ListView `
+	-Colors $Colors
+
+# replace 'Ctrl+t' and 'Ctrl+r' with your preferred bindings:
+Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
 
 $env:EDITOR = 'nvim'
 $ENV:FZF_DEFAULT_OPTS = @"
@@ -71,5 +74,5 @@ Set-Alias base '$PATH$\Base\Scripts\Activate.ps1'
 Set-Alias vim nvim
 function which ($Command) {
 	Get-Command -Name $Command -ErrorAction SilentlyContinue |
-		Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
+	Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
 }
