@@ -14,9 +14,7 @@ if [ "$(command -v exa)" ]; then
 	alias la='exa -a'
 	alias l='exa -l'
 fi
-if [ -v WSL_DISTRO_NAME ]; then
-	alias ii='/mnt/c/Windows/explorer.exe'
-	alias clip='/mnt/c/Windows/system32/clip.exe'
-	alias code="/mnt/c/Users/fadei/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
-	alias copy="/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -Command gcb"
-fi
+# use win32yank.exe
+# ln -s /mnt/c/Users/fadei/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code .
+# ln -s /mnt/c/Windows/explorer.exe ii
+# ln -s /mnt/c/Windows/System32/clip.exe .
