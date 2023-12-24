@@ -18,16 +18,20 @@ fi
 # use NVIM_APPNAME to use various neovim distros
 alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
 alias nvim-nvchad="NVIM_APPNAME=NvChad nvim"
+alias nvimc="nvim --clean"
 function nvims() {
-  items=("default" "LazyVim" "NvChad")
+  items=("default" "LazyVim" "NvChad" "clean")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config >> " --height=50% --layout=reverse --border --exit-0)
+  clean=""
   if [[ -z $config ]]; then
     echo "Nothing selected"
     return 0
   elif [[ $config == "default" ]]; then
     config=""
+  elif [[ $config == "clean" ]]; then
+    clean="--clean"
   fi
-  NVIM_APPNAME=$config nvim "$@"
+  NVIM_APPNAME=$config nvim $clean "$@"
 }
 
 # use win32yank.exe
