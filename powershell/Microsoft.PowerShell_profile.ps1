@@ -7,6 +7,7 @@ $Flavor = $Catppuccin['Mocha']
 
 # oh-my-posh init pwsh --config "~/Documents/PowerShell/my.omp.json" | Invoke-Expression
 Invoke-Expression (&starship init powershell)
+Invoke-Expression (&scoop-search --hook)
 zoxide init --hook 'pwd' powershell | Out-String | Invoke-Expression
 # vimode
 $OnViModeChange = [scriptblock] {
