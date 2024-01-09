@@ -1,12 +1,10 @@
-import = [
-  "~/.config/alacritty/catppuccin-mocha.toml"
-]
+import = ["~/.config/alacritty/catppuccin-mocha.toml"]
 
 [env]
 TERM = "xterm-256color"
 
 [font]
-normal = {family = "CaskaydiaCoveNerdFont", style = "Regular"}
+normal = { family = "CaskaydiaCoveNerdFont", style = "Regular" }
 size = 11
 
 [window]
@@ -26,6 +24,6 @@ hide_when_typing = true
 
 [keyboard]
 bindings = [
-{ key = "v", mods = "Control", action = "Paste" },
-{ key = "b", mods = "Control", action = "ToggleViMode"}
+  { key = "v", mods = "Control", action = "Paste" },
+  { key = "b", mods = "Control", action = "ToggleViMode" },
 ]
