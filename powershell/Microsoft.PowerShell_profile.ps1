@@ -78,3 +78,6 @@ function which ($Command) {
 	Get-Command -Name $Command -ErrorAction SilentlyContinue |
 	Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
 }
+function Set-Utf8 {
+  $OutputEncoding = [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
+}
