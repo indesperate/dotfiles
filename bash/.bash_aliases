@@ -19,6 +19,9 @@ fi
 alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
 alias nvim-nvchad="NVIM_APPNAME=NvChad nvim"
 alias nvimc="nvim --clean"
+function trim() {
+	awk '{$1=$1}1' "$@"
+}
 function nvims() {
   items=("default" "LazyVim" "NvChad" "clean")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config >> " --height=50% --layout=reverse --border --exit-0)
