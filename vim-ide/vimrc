@@ -63,6 +63,7 @@ set scrolloff=5
 " no sounds
 set noerrorbells
 set novisualbell
+set vb t_vb=
 
 " change cursor
 let &t_SI=" \e[5 q"
