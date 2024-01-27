@@ -1,0 +1,88 @@
+" Disable compatibility with vi which can cause unexpected issues.
+set nocompatible
+
+" Enable plugins and load plugin for the detected file type.
+filetype on
+filetype indent on
+filetype plugin on
+
+" Turn syntax highlighting on.
+syntax on
+
+" Highlight cursor line underneath the cursor horizontally.
+set cursorline
+
+" Show line numbers.
+set number
+set relativenumber
+
+" Show file stats.
+set ruler
+
+"Whitespace.
+set autoindent
+set smartindent
+set tabstop=2 shiftwidth=2 expandtab
+
+" Enable auto completion menu after pressing TAB.
+set wildmenu
+
+" Status bar.
+set laststatus=2
+" Format the status line
+set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+
+" Last line.
+set showmode
+set showcmd
+set showmatch
+
+" command history
+set history=500
+
+" search util
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+" for regular expressions
+set magic
+
+" Set to auto read when a file is changed from the outside
+set autoread
+au FocusGained,BufEnter * silent! checktime
+
+set scrolloff=5
+
+" no sounds
+set noerrorbells
+set novisualbell
+
+" change cursor
+let &t_SI=" \e[5 q"
+let &t_SR=" \e[4 q"
+let &t_EI=" \e[2 q"
+set timeoutlen=500
+
+let mapleader = " "
+" window
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+" buffer
+nnoremap H :bprevious<cr>
+nnoremap L :bnext<cr>
+" quickfix
+nnoremap [q :cprevious<cr>
+nnoremap ]q :cnext<cr>
+" move text
+vnoremap J :m '>+1<cr>gv=gv
+vnoremap K :m '<-2<cr>gv=gv
+vnoremap < <gv
+vnoremap > >gv
+vnoremap . :normal.<cr>
+nnoremap Y y$
+nnoremap <leader>n :Lexplore<CR>
+colorscheme desert
+
