@@ -29,8 +29,14 @@ set wildmenu
 
 " Status bar.
 set laststatus=2
-" Format the status line
-set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+" Clear status line when vimrc is reloaded.
+set statusline=
+" Status line left side.
+set statusline+=\ %F\ %m\ %r
+" Use a divider to separate the left side from the right side.
+set statusline+=%=
+" Status line right side.
+set statusline+=\ %y\ Row:\ %l\ Col:\ %c\ %p%%
 
 " Last line.
 set showmode
