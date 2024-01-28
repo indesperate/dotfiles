@@ -91,6 +91,7 @@ export FZF_DEFAULT_OPTS=" \
 
 if [ "$(command -v nvim)" ] ; then
   export EDITOR=nvim
+  export MANPAGER='nvim +Man!'
 fi
 
 source /usr/share/doc/fzf/examples/key-bindings.bash
