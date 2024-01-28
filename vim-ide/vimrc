@@ -67,8 +67,12 @@ set vb t_vb=
 
 " change cursor
 let &t_SI.="\e[5 q" "SI = INSERT mode
-let &t_SR.="\e[4 q" "SR = REPLACE mode
+let &t_SR.="\e[3 q" "SR = REPLACE mode
 let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
+if has("autocmd")
+  au VimEnter * silent execute '!echo -ne "\e[1 q"' | redraw!
+  au VimLeave * silent execute '!echo -ne "\e[5 q"' | redraw!
+endif
 set timeoutlen=500
 
 let mapleader = " "
