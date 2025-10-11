@@ -1,0 +1,19 @@
+[user]
+	name = indesperate
+	email = indesperate@outlook.com
+[core]
+	editor = nvim
+	fsmonitor = true
+	untrackedcache = true
+[diff]
+	tool = default-difftool
+[difftool "default-difftool"]
+	cmd = nvim -d $LOCAL $REMOTE
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[init]
+	defaultBranch = main

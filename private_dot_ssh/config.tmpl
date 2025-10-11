@@ -1,0 +1,9 @@
+TCPKeepAlive=yes
+ServerAliveInterval=15
+ServerAliveCountMax=6
+Compression=yes
+Host remote
+    HostName {{ .ssh.hostname }}
+    User {{ .ssh.user }}
+    Port 22
+    IdentityFile ~/.ssh/id_ed25519
