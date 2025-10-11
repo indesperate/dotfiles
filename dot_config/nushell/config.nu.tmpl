@@ -1,0 +1,3 @@
+{{- template "config.nu" . -}}
+
+atuin init nu --disable-up-arrow | save -f ($nu.data-dir | path join "vendor/autoload/atuin.nu")
