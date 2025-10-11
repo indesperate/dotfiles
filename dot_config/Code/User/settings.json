@@ -1,0 +1,244 @@
+{
+	// editor
+	"editor.renderWhitespace": "trailing",
+	"editor.fontFamily": "Maple Mono NF CN",
+	"editor.fontWeight": 500,
+	"editor.fontSize": 20,
+	"editor.fontLigatures": true,
+	"editor.guides.bracketPairs": "active",
+	"editor.smoothScrolling": true,
+	"editor.inlineSuggest.enabled": true,
+	"editor.formatOnSave": false,
+	"editor.formatOnSaveMode": "modificationsIfAvailable",
+	"editor.peekWidgetDefaultFocus": "editor",
+	"editor.gotoLocation.alternativeDefinitionCommand": "editor.action.revealDeclaration",
+	"window.titleBarStyle": "custom",
+	// ui
+	"background.fullscreen": {
+		"images": [
+			"https://raw.githubusercontent.com/doki-theme/doki-theme-assets/refs/heads/master/backgrounds/wallpapers/ryuko_light.png",
+			"https://raw.githubusercontent.com/doki-theme/doki-theme-assets/refs/heads/master/backgrounds/wallpapers/zero_two_obsidian.png",
+			"https://raw.githubusercontent.com/doki-theme/doki-theme-assets/refs/heads/master/backgrounds/wallpapers/kanna_dark.png"
+		],
+		"opacity": 0.1,
+		"interval": 0,
+		"random": true
+	},
+	"workbench.colorTheme": "Maple Dark",
+	"workbench.iconTheme": "catppuccin-mocha",
+	"workbench.colorCustomizations": {
+		"editorCursor.foreground": "#F5BDE6"
+	},
+	// terminal
+	"terminal.integrated.cursorStyle": "line",
+	"terminal.integrated.enableImages": true,
+	"terminal.integrated.fontLigatures.enabled": true,
+	// workbench
+	"diffEditor.hideUnchangedRegions.enabled": true,
+	"chat.disableAIFeatures": true,
+	// disable recommendation
+	"extensions.ignoreRecommendations": true,
+	// cpp
+	"neocmakelsp.lsp_snippets": true,
+	"cmake.configureOnOpen": false,
+	"cmake.configureOnEdit": false,
+	"cmake.options.statusBarVisibility": "icon",
+	"cmake.preferredGenerators": ["Unix Makefiles", "Ninja"],
+	"cmake.pinnedCommands": [
+		"workbench.action.tasks.configureTaskRunner",
+		"workbench.action.tasks.runTask"
+	],
+	"C_Cpp.intelliSenseEngine": "disabled",
+	// python
+	"python.defaultInterpreterPath": "/bin/python",
+	"python.analysis.inlayHints.variableTypes": true,
+	"python.analysis.inlayHints.functionReturnTypes": true,
+	"[python]": {
+		"editor.defaultFormatter": "charliermarsh.ruff",
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "explicit"
+		}
+	},
+	"notebook.formatOnSave.enabled": false,
+	// bash
+	"bashIde.shfmt.path": "/usr/bin/shfmt",
+	"bashIde.shellcheckPath": "/usr/bin/shellcheck",
+	// lua
+	"stylua.styluaPath": "/usr/bin/stylua",
+	"[lua]": {
+		"editor.defaultFormatter": "JohnnyMorganz.stylua"
+	},
+	// git
+	"gitlens.graph.layout": "editor",
+	"gitlens.launchpad.indicator.enabled": false,
+	"gitlens.plusFeatures.enabled": false,
+	// rust
+	"rust-analyzer.check.command": "clippy",
+	"rust-analyzer.server.path": "/usr/bin/rust-analyzer",
+	"evenBetterToml.taplo.path": "/usr/bin/taplo",
+	//json
+	"[json]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	// todo tree
+	"todo-tree.highlights.enabled": false,
+	// paltformio
+	"platformio-ide.useBuiltinPIOCore": false,
+	"platformio-ide.customPATH": "/usr/bin/platformio",
+	// vim configure
+	"extensions.experimental.affinity": {
+		"vscodevim.vim": 1
+	},
+	// vim
+	"vim.hlsearch": true,
+	"vim.inccommand": "replace",
+	"vim.leader": "<space>",
+	"vim.substitutionTextColor": "#CBA6F7",
+	"vim.enableNeovim": true,
+	"vim.neovimUseConfigFile": false,
+	"vim.normalModeKeyBindingsNonRecursive": [
+		{
+			"before": ["H"],
+			"commands": ["workbench.action.previousEditor"],
+			"silent": true
+		},
+		{
+			"before": ["L"],
+			"commands": ["workbench.action.nextEditor"],
+			"silent": true
+		},
+		{
+			"before": ["<leader>", "f", "g"],
+			"commands": ["workbench.action.quickTextSearch"],
+			"silent": true
+		},
+		{
+			"before": ["<leader>", "f", "s"],
+			"commands": ["workbench.action.gotoSymbol"],
+			"silent": true
+		},
+		{
+			"before": ["<leader>", "f", "f"],
+			"commands": ["workbench.action.quickOpen"],
+			"silent": true
+		},
+		{
+			"before": ["<leader>", "a"],
+			"commands": ["editor.action.quickFix"],
+			"silent": true
+		},
+		{
+			"before": ["<leader>", "r"],
+			"commands": ["editor.action.rename"],
+			"silent": true
+		},
+		{
+			"before": ["g", "r"],
+			"commands": ["editor.action.goToReferences"],
+			"silent": true
+		},
+		{
+			"before": ["g", "i"],
+			"commands": ["editor.action.goToImplementation"],
+			"silent": true
+		},
+		{
+			"before": ["g", "D"],
+			"commands": ["editor.action.revealDefinitionAside"],
+			"silent": true
+		},
+		{
+			"before": ["g", "d"],
+			"commands": ["editor.action.revealDefinition"],
+			"silent": true
+		},
+		{
+			"before": ["<leader>", "="],
+			"commands": ["editor.action.formatDocument", "notebook.format"],
+			"silent": true
+		},
+		{
+			"before": ["[", "g"],
+			"commands": [
+				"workbench.action.editor.previousChange",
+				"workbench.action.compareEditor.previousChange"
+			],
+			"silent": true
+		},
+		{
+			"before": ["]", "g"],
+			"commands": [
+				"workbench.action.editor.nextChange",
+				"workbench.action.compareEditor.nextChange"
+			],
+			"silent": true
+		},
+		{
+			"before": ["[", "d"],
+			"commands": ["editor.action.marker.prev"],
+			"silent": true
+		},
+		{
+			"before": ["]", "d"],
+			"commands": ["editor.action.marker.next"],
+			"silent": true
+		},
+		{
+			"before": ["<leader>", "n"],
+			"commands": ["workbench.explorer.fileView.focus"],
+			"silent": true
+		},
+		{
+			"before": ["K"],
+			"commands": ["editor.action.showDefinitionPreviewHover"],
+			"silent": true
+		}
+	],
+	"vim.insertModeKeyBindingsNonRecursive": [
+		{
+			"before": ["c-j"],
+			"commands": ["editor.action.triggerSuggest"],
+			"silent": true
+		},
+		{
+			"before": ["c-k"],
+			"commands": ["editor.action.triggerParameterHints"],
+			"silent": true
+		},
+		{
+			"before": ["c-v"],
+			"commands": ["editor.action.clipboardPasteAction"],
+			"silent": true
+		}
+	],
+	"vim.visualModeKeyBindingsNonRecursive": [
+		{
+			"before": ["c-c"],
+			"commands": ["editor.action.clipboardCopyAction"],
+			"silent": true
+		},
+		{
+			"before": [">"],
+			"commands": ["editor.action.indentLines"],
+			"silent": true
+		},
+		{
+			"before": ["<"],
+			"commands": ["editor.action.outdentLines"],
+			"silent": true
+		},
+		{
+			"before": ["J"],
+			"commands": ["editor.action.moveLinesDownAction"],
+			"silent": true
+		},
+		{
+			"before": ["K"],
+			"commands": ["editor.action.moveLinesUpAction"],
+			"silent": true
+		}
+	]
+}

@@ -1,0 +1,275 @@
+{
+	// editor
+	"editor.fontFamily": "Maple Mono NF CN",
+	"editor.fontWeight": "400",
+	"editor.fontLigatures": true,
+	"editor.fontSize": 20,
+	"editor.guides.bracketPairs": "active",
+	"editor.cursorSmoothCaretAnimation": "on",
+	"editor.smoothScrolling": true,
+	"editor.formatOnSave": false,
+	"editor.formatOnSaveMode": "modificationsIfAvailable",
+	"editor.peekWidgetDefaultFocus": "editor",
+	"editor.gotoLocation.alternativeDefinitionCommand": "editor.action.revealDeclaration",
+	// background and ui
+	"background.enabled": true,
+	"background.fullscreen": {
+		"images": [
+			"https://raw.githubusercontent.com/doki-theme/doki-theme-assets/refs/heads/master/backgrounds/wallpapers/zero_two_obsidian.png",
+			"https://raw.githubusercontent.com/doki-theme/doki-theme-assets/refs/heads/master/backgrounds/wallpapers/kanna_dark.png",
+			"https://raw.githubusercontent.com/doki-theme/doki-theme-assets/refs/heads/master/backgrounds/wallpapers/ryuko_light.png"
+		],
+		"opacity": 0.1,
+		"interval": 0,
+		"random": true
+	},
+	"workbench.iconTheme": "catppuccin-mocha",
+	"workbench.colorTheme": "Catppuccin Mocha",
+	// terminal
+	"terminal.integrated.fontLigatures.enabled": true,
+	"terminal.integrated.cursorStyle": "line",
+	// cpp
+	"neocmakelsp.lsp_snippets": true,
+	"cmake.outputLogEncoding": "utf8",
+	"cmake.configureOnOpen": false,
+	"cmake.configureOnEdit": false,
+	"cmake.options.statusBarVisibility": "icon",
+	"cmake.pinnedCommands": [
+		"workbench.action.tasks.configureTaskRunner",
+		"workbench.action.tasks.runTask"
+	],
+	"C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
+	"C_Cpp.inlayHints.parameterNames.enabled": true,
+	"C_Cpp.inlayHints.referenceOperator.enabled": true,
+	"C_Cpp.inlayHints.referenceOperator.showSpace": true,
+	"C_Cpp.clang_format_fallbackStyle": "Google",
+	// python,
+	"notebook.lineNumbers": "on",
+	"debugpy.debugJustMyCode": false,
+	"debugpy.showPythonInlineValues": true,
+	"python.analysis.inlayHints.variableTypes": true,
+	"python.analysis.inlayHints.functionReturnTypes": true,
+	"python.analysis.inlayHints.callArgumentNames": "partial",
+	"[python]": {
+		"editor.defaultFormatter": "charliermarsh.ruff",
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "explicit"
+		}
+	},
+	"notebook.formatOnSave.enabled": false,
+	"notebook.defaultFormatter": "charliermarsh.ruff",
+	"notebook.codeActionsOnSave": {
+		"source.organizeImports": "never"
+	},
+	//json
+	"[json]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	// git
+	"gitlens.graph.layout": "editor",
+	"gitlens.plusFeatures.enabled": false,
+	"diffEditor.hideUnchangedRegions.enabled": true,
+	// ssh
+	"remote.SSH.remotePlatform": {
+		"ubuntu": "linux"
+	},
+	// markdown
+	"[markdown]": {
+		"editor.defaultFormatter": "yzhang.markdown-all-in-one"
+	},
+	// zig
+	"zig.path": "zig",
+	"zig.zls.path": "zls",
+	// lua
+	"[lua]": {
+		"editor.defaultFormatter": "JohnnyMorganz.stylua"
+	},
+	// todo tree
+	"todo-tree.highlights.enabled": false,
+	"todo-tree.general.tags": ["TODO", "[TODO]", "FIXME", "[FIXME]"],
+	// leetcode
+	"leetcode.endpoint": "leetcode-cn",
+	"leetcode.workspaceFolder": "D:\\LeetCode",
+	"leetcode.defaultLanguage": "cpp",
+	// disable AI
+	"chat.disableAIFeatures": true,
+	"extensions.ignoreRecommendations": true,
+	// vim
+	"extensions.experimental.affinity": {
+		"vscodevim.vim": 1
+	},
+	"vim.hlsearch": true,
+	"vim.leader": "<space>",
+	"vim.substitutionTextColor": "#cba6f7",
+	"vim.enableNeovim": true,
+	"vim.normalModeKeyBindingsNonRecursive": [
+		{
+			"before": ["H"],
+			"commands": ["workbench.action.previousEditor"],
+			"silent": true
+		},
+		{
+			"before": ["L"],
+			"commands": ["workbench.action.nextEditor"],
+			"silent": true
+		},
+		{
+			"before": ["<leader>", "m"],
+			"commands": ["bookmarks.toggleLabeled"],
+			"silent": true
+		},
+		{
+			"before": ["<leader>", "f", "g"],
+			"commands": ["workbench.action.quickTextSearch"],
+			"silent": true
+		},
+		{
+			"before": ["<leader>", "f", "s"],
+			"commands": ["workbench.action.gotoSymbol"],
+			"silent": true
+		},
+		{
+			"before": ["<leader>", "f", "f"],
+			"commands": ["workbench.action.quickOpen"],
+			"silent": true
+		},
+		{
+			"before": ["<leader>", "f", "m"],
+			"commands": ["bookmarks.list"],
+			"silent": true
+		},
+		{
+			"before": ["<leader>", "a"],
+			"commands": ["editor.action.quickFix"],
+			"silent": true
+		},
+		{
+			"before": ["<leader>", "r"],
+			"commands": ["editor.action.rename"],
+			"silent": true
+		},
+		{
+			"before": ["g", "r"],
+			"commands": ["editor.action.goToReferences"],
+			"silent": true
+		},
+		{
+			"before": ["g", "i"],
+			"commands": ["editor.action.goToImplementation"],
+			"silent": true
+		},
+		{
+			"before": ["g", "d"],
+			"commands": ["editor.action.revealDefinition"],
+			"silent": true
+		},
+		{
+			"before": ["g", "D"],
+			"commands": ["editor.action.revealDefinitionAside"],
+			"silent": true
+		},
+		{
+			"before": ["<leader>", "="],
+			"commands": ["editor.action.formatDocument"],
+			"silent": true
+		},
+		{
+			"before": ["[", "g"],
+			"commands": [
+				"workbench.action.editor.previousChange",
+				"workbench.action.compareEditor.previousChange"
+			],
+			"silent": true
+		},
+		{
+			"before": ["]", "g"],
+			"commands": [
+				"workbench.action.editor.nextChange",
+				"workbench.action.compareEditor.nextChange"
+			],
+			"silent": true
+		},
+		{
+			"before": ["[", "m"],
+			"commands": ["bookmarks.jumpToPrevious"],
+			"silent": true
+		},
+		{
+			"before": ["]", "m"],
+			"commands": ["bookmarks.jumpToNext"],
+			"silent": true
+		},
+		{
+			"before": ["[", "d"],
+			"commands": ["editor.action.marker.prev"],
+			"silent": true
+		},
+		{
+			"before": ["]", "d"],
+			"commands": ["editor.action.marker.next"],
+			"silent": true
+		},
+		{
+			"before": ["<leader>", "n", "f"],
+			"commands": ["workbench.explorer.fileView.focus"],
+			"silent": true
+		},
+		{
+			"before": ["<leader>", "n", "m"],
+			"commands": ["bookmarksExplorer.focus"],
+			"silent": true
+		},
+		{
+			"before": ["K"],
+			"commands": ["editor.action.showDefinitionPreviewHover"],
+			"silent": true
+		}
+	],
+	"vim.insertModeKeyBindingsNonRecursive": [
+		{
+			"before": ["c-j"],
+			"commands": ["editor.action.triggerSuggest"],
+			"silent": true
+		},
+		{
+			"before": ["c-k"],
+			"commands": ["editor.action.triggerParameterHints"],
+			"silent": true
+		},
+		{
+			"before": ["c-v"],
+			"commands": ["editor.action.clipboardPasteAction"],
+			"silent": true
+		}
+	],
+	"vim.visualModeKeyBindingsNonRecursive": [
+		{
+			"before": ["c-c"],
+			"commands": ["editor.action.clipboardCopyAction"],
+			"silent": true
+		},
+		{
+			"before": [">"],
+			"commands": ["editor.action.indentLines"],
+			"silent": true
+		},
+		{
+			"before": ["<"],
+			"commands": ["editor.action.outdentLines"],
+			"silent": true
+		},
+		{
+			"before": ["J"],
+			"commands": ["editor.action.moveLinesDownAction"],
+			"silent": true
+		},
+		{
+			"before": ["K"],
+			"commands": ["editor.action.moveLinesUpAction"],
+			"silent": true
+		}
+	]
+}

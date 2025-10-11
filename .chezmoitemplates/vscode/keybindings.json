@@ -1,0 +1,158 @@
+[
+	{
+		"key": "shift+a",
+		"command": "explorer.newFolder",
+		"when": "!editorFocus && !inputFocus && filesExplorerFocus"
+	},
+	{
+		"key": "a",
+		"command": "explorer.newFile",
+		"when": "!editorFocus && !inputFocus && filesExplorerFocus"
+	},
+	{
+		"key": "y",
+		"command": "filesExplorer.copy",
+		"when": "!editorFocus && !inputFocus && filesExplorerFocus"
+	},
+	{
+		"key": "c",
+		"command": "filesExplorer.cut",
+		"when": "!editorFocus && !inputFocus && filesExplorerFocus"
+	},
+	{
+		"key": "p",
+		"command": "filesExplorer.paste",
+		"when": "!editorFocus && !inputFocus && filesExplorerFocus"
+	},
+	{
+		"key": "d",
+		"command": "deleteFile",
+		"when": "!editorFocus && !inputFocus && filesExplorerFocus"
+	},
+	{
+		"key": "r",
+		"command": "renameFile",
+		"when": "!editorFocus && !inputFocus && filesExplorerFocus"
+	},
+	{
+		"key": "ctrl+j",
+		"command": "workbench.action.navigateDown",
+		"when": "vim.mode == 'Normal'"
+	},
+	{
+		"key": "ctrl+k",
+		"command": "workbench.action.navigateUp",
+		"when": "vim.mode == 'Normal'"
+	},
+	{
+		"key": "ctrl+l",
+		"command": "workbench.action.navigateRight",
+		"when": "vim.mode == 'Normal'"
+	},
+	{
+		"key": "ctrl+h",
+		"command": "workbench.action.navigateLeft",
+		"when": "vim.mode == 'Normal'"
+	},
+	{
+		"key": "q",
+		"command": "workbench.action.toggleSidebarVisibility",
+		"when": "vim.mode == 'Normal' && !editorFocus && !inputFocus"
+	},
+	{
+		"key": "ctrl+p",
+		"command": "editor.action.pageUpHover",
+		"when": "editorHoverFocused"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "editor.action.pageDownHover",
+		"when": "editorHoverFocused"
+	},
+	{
+		"key": "ctrl+p",
+		"command": "focusPreviousRenameSuggestion",
+		"when": "renameInputVisible"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "focusNextRenameSuggestion",
+		"when": "renameInputVisible"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "selectNextCodeAction",
+		"when": "codeActionMenuVisible"
+	},
+	{
+		"key": "ctrl+p",
+		"command": "selectPrevCodeAction",
+		"when": "codeActionMenuVisible"
+	},
+	{
+		"key": "ctrl+p",
+		"command": "quickInput.previous",
+		"when": "inQuickInput && quickInputType == 'quickPick'"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "quickInput.next",
+		"when": "inQuickInput && quickInputType == 'quickPick'"
+	},
+	{
+		"key": "ctrl+p",
+		"command": "list.focusUp",
+		"when": "listFocus && !inputFocus && !treestickyScrollFocused"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "list.focusDown",
+		"when": "listFocus && !inputFocus && !treestickyScrollFocused"
+	},
+	{
+		"key": "ctrl+p",
+		"command": "showPrevParameterHint",
+		"when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "showNextParameterHint",
+		"when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "goToNextReference",
+		"when": "inReferenceSearchEditor || referenceSearchVisible"
+	},
+	{
+		"key": "ctrl+p",
+		"command": "goToPreviousReference",
+		"when": "inReferenceSearchEditor || referenceSearchVisible"
+	},
+	{
+		"key": "ctrl+r",
+		"command": "workbench.action.terminal.runRecentCommand",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "ctrl+alt+r",
+		"command": "workbench.action.terminal.sendSequence",
+		"args": { "text": "\u0012" /*^R*/ },
+		"when": "terminalFocus"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "workbench.action.terminal.selectNextSuggestion",
+		"when": "terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible || terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible"
+	},
+	{
+		"key": "ctrl+p",
+		"command": "workbench.action.terminal.selectPrevSuggestion",
+		"when": "terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible || terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible"
+	},
+	{
+		"key": "ctrl+j",
+		"command": "workbench.action.terminal.requestCompletions",
+		"when": "config.terminal.integrated.suggest.enabled && terminalFocus && terminalProcessSupported && !terminalSuggestWidgetVisible"
+	}
+]
