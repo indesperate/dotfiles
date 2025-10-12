@@ -17,6 +17,9 @@
     side-by-side = true
 [merge]
     conflictStyle = zdiff3
+    tool = code
+[mergetool "code"]
+    cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
 [credential "https://github.com"]
     helper =
 {{- if eq .chezmoi.os "linux" }}
