@@ -9,8 +9,10 @@ README.md
 .local/bin/yank
 .config/*
 !.config/starship.toml
+pacman.sh
 {{- end }}
 
 {{- if ne .chezmoi.os "windows" }}
 AppData
+scoop.ps1
 {{- end }}
