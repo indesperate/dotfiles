@@ -1,0 +1,27 @@
+{
+	// editor
+	"editor.fontFamily": "Maple Mono NF CN",
+	"editor.fontWeight": "400",
+	"editor.fontLigatures": true,
+	"editor.fontSize": 20,
+	"editor.renderWhitespace": "trailing",
+	"editor.guides.bracketPairs": "active",
+	"editor.formatOnSave": false,
+	"editor.formatOnSaveMode": "modificationsIfAvailable",
+	"editor.peekWidgetDefaultFocus": "editor",
+	"editor.gotoLocation.alternativeDefinitionCommand": "editor.action.revealDeclaration",
+	// ui
+	"workbench.colorCustomizations": {
+		"editorCursor.foreground": "#F5BDE6"
+	},
+	// terminal
+	"terminal.integrated.cursorStyle": "line",
+	"terminal.integrated.enableImages": true,
+	"terminal.integrated.fontLigatures.enabled": true,
+	// disable builtin AI
+	"chat.disableAIFeatures": true,
+	// disable recommendation
+	"extensions.ignoreRecommendations": true,
+	// diff
+	"diffEditor.hideUnchangedRegions.enabled": true
+}

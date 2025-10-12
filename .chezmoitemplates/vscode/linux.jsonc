@@ -1,0 +1,17 @@
+{
+	"C_Cpp.intelliSenseEngine": "disabled",
+	// python
+	"python.defaultInterpreterPath": "/bin/python",
+	// bash
+	"bashIde.shfmt.path": "/usr/bin/shfmt",
+	"bashIde.shellcheckPath": "/usr/bin/shellcheck",
+	// paltformio
+	"platformio-ide.useBuiltinPIOCore": false,
+	"platformio-ide.customPATH": "/usr/bin/platformio",
+	// lua
+	"stylua.styluaPath": "/usr/bin/stylua",
+	// rust
+	"rust-analyzer.server.path": "/usr/bin/rust-analyzer",
+	// toml
+	"evenBetterToml.taplo.path": "/usr/bin/taplo"
+}

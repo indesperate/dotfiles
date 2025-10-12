@@ -135,7 +135,7 @@
 		"when": "terminalFocus"
 	},
 	{
-		"key": "ctrl+alt+r",
+		"key": "ctrl+shift+r",
 		"command": "workbench.action.terminal.sendSequence",
 		"args": { "text": "\u0012" /*^R*/ },
 		"when": "terminalFocus"

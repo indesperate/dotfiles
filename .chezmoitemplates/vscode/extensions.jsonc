@@ -1,0 +1,64 @@
+{
+	// ui and background
+	"workbench.iconTheme": "catppuccin-mocha",
+	"workbench.colorTheme": "Catppuccin Mocha",
+	"background.enabled": true,
+	"background.fullscreen": {
+		"images": [
+			"https://raw.githubusercontent.com/doki-theme/doki-theme-assets/refs/heads/master/backgrounds/wallpapers/zero_two_obsidian.png",
+			"https://raw.githubusercontent.com/doki-theme/doki-theme-assets/refs/heads/master/backgrounds/wallpapers/kanna_dark.png",
+			"https://raw.githubusercontent.com/doki-theme/doki-theme-assets/refs/heads/master/backgrounds/wallpapers/ryuko_light.png"
+		],
+		"opacity": 0.1,
+		"interval": 0,
+		"random": true
+	},
+	// cmake
+	"neocmakelsp.lsp_snippets": true,
+	"cmake.outputLogEncoding": "utf8",
+	"cmake.configureOnOpen": false,
+	"cmake.configureOnEdit": false,
+	"cmake.options.statusBarVisibility": "icon",
+	"cmake.pinnedCommands": [
+		"workbench.action.tasks.configureTaskRunner",
+		"workbench.action.tasks.runTask"
+	],
+	//python
+	"debugpy.debugJustMyCode": false,
+	"debugpy.showPythonInlineValues": true,
+	"python.analysis.inlayHints.variableTypes": true,
+	"python.analysis.inlayHints.functionReturnTypes": true,
+	"python.analysis.inlayHints.callArgumentNames": "partial",
+	// notebook
+	"notebook.lineNumbers": "on",
+	//git lens
+	"gitlens.graph.layout": "editor",
+	"gitlens.plusFeatures.enabled": false,
+	// todo tree
+	"todo-tree.highlights.enabled": false,
+	"todo-tree.general.tags": ["TODO", "[TODO]", "FIXME", "[FIXME]"],
+	// format sections
+	// python
+	"[python]": {
+		"editor.defaultFormatter": "charliermarsh.ruff",
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "explicit"
+		}
+	},
+	// json
+	"notebook.defaultFormatter": "charliermarsh.ruff",
+	"[json]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	// lua
+	"[lua]": {
+		"editor.defaultFormatter": "JohnnyMorganz.stylua"
+	},
+	// markdown
+	"[markdown]": {
+		"editor.defaultFormatter": "yzhang.markdown-all-in-one"
+	}
+}

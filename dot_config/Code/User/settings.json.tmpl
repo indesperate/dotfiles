@@ -1,0 +1,6 @@
+{{- $base := (include ".chezmoitemplates/vscode/base.jsonc" | fromJsonc)  -}}
+{{- $extensions := (include ".chezmoitemplates/vscode/extensions.jsonc" | fromJsonc)  -}}
+{{- $vimkeys := (include ".chezmoitemplates/vscode/vim.jsonc" | fromJsonc)  -}}
+{{- $custom := (include ".chezmoitemplates/vscode/linux.jsonc" | fromJsonc)  -}}
+{{- $merged := merge $base $extensions $vimkeys $custom -}}
+{{ $merged | toPrettyJson }}
