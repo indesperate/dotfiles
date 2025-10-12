@@ -1,3 +1,20 @@
 [data.ssh]
-  hostname = "xx.xx.xx.xx"
-  user = "xx"
+hostname = "xx.xx.xx.xx"
+user = "xx"
+[diff]
+command = "delta"
+args = ["{{ `{{ .Destination }}` }}", "{{ `{{ .Target }}` }}"]
+[merge]
+{{- if eq .chezmoi.os "linux" }}
+command = "bash"
+args = [
+    "-c",
+    "cp {{ `{{ .Target }}` }} {{ `{{ .Target }}` }}.base && code --wait --new-window --merge {{ `{{ .Destination }}` }} {{ `{{ .Target  }}` }} {{ `{{ .Target }}` }}.base {{ `{{ .Source }}` }}",
+]
+{{- else if eq .chezmoi.os "windows" }}
+command = "cmd"
+args = [
+    "/C",
+    "copy {{ `{{ .Target }}` }} {{ `{{ .Target }}` }}.base && code --wait --new-window --merge {{ `{{ .Destination }}` }} {{ `{{ .Target  }}` }} {{ `{{ .Target }}` }}.base {{ `{{ .Source }}` }}",
+]
+{{- end }}
