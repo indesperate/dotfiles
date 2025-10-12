@@ -1,27 +1,65 @@
 [user]
-	name = indesperate
-	email = indesperate@outlook.com
+    name = indesperate
+    email = indesperate@outlook.com
 [core]
-	editor = nvim
-	fsmonitor = true
-	untrackedcache = true
-[diff]
-	tool = default-difftool
-[difftool "default-difftool"]
-	cmd = nvim -d $LOCAL $REMOTE
+    pager = delta
+    editor = nvim
+    fsmonitor = true
+    untrackedcache = true
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    line-numbers = true
+    navigate = true
+    hyperlinks = true
+    hyperlinks-file-link-format = "vscode://file/{path}:{line}"
+    features = catppuccin-mocha
+    side-by-side = true
+[merge]
+    conflictStyle = zdiff3
 [credential "https://github.com"]
-	helper = 
+    helper =
 {{- if eq .chezmoi.os "linux" }}
-	helper = !/usr/bin/gh auth git-credential
+    helper = !/usr/bin/gh auth git-credential
 {{- else if eq .chezmoi.os "windows" }}
-	helper = !'{{ .chezmoi.homeDir }}/scoop/apps/gh/current/bin/gh.exe' auth git-credential
+    helper = !'{{ .chezmoi.homeDir }}/scoop/apps/gh/current/bin/gh.exe' auth git-credential
 {{- end }}
 [credential "https://gist.github.com"]
-	helper = 
+    helper =
 {{- if eq .chezmoi.os "linux" }}
-	helper = !/usr/bin/gh auth git-credential
+    helper = !/usr/bin/gh auth git-credential
 {{- else if eq .chezmoi.os "windows" }}
-	helper = !'{{ .chezmoi.homeDir }}/scoop/apps/gh/current/bin/gh.exe' auth git-credential
+    helper = !'{{ .chezmoi.homeDir }}/scoop/apps/gh/current/bin/gh.exe' auth git-credential
 {{- end }}
 [init]
-	defaultBranch = main
+    defaultBranch = main
+[delta "catppuccin-mocha"]
+    blame-palette = "#1e1e2e #181825 #11111b #313244 #45475a"
+    commit-decoration-style = "#6c7086" bold box ul
+    dark = true
+    file-decoration-style = "#6c7086"
+    file-style = "#cdd6f4"
+    hunk-header-decoration-style = "#6c7086" box ul
+    hunk-header-file-style = bold
+    hunk-header-line-number-style = bold "#a6adc8"
+    hunk-header-style = file line-number syntax
+    line-numbers-left-style = "#6c7086"
+    line-numbers-minus-style = bold "#f38ba8"
+    line-numbers-plus-style = bold "#a6e3a1"
+    line-numbers-right-style = "#6c7086"
+    line-numbers-zero-style = "#6c7086"
+    # 25% red 75% base
+    minus-emph-style = bold syntax "#53394c"
+    # 10% red 90% base
+    minus-style = syntax "#34293a"
+    # 25% green 75% base
+    plus-emph-style = bold syntax "#404f4a"
+    # 10% green 90% base
+    plus-style = syntax "#2c3239"
+    map-styles = \
+        bold purple => syntax "#494060", \
+        bold blue => syntax "#384361", \
+        bold cyan => syntax "#384d5d", \
+        bold yellow => syntax "#544f4e"
+    # Should match the name of the bat theme
+    syntax-theme = Catppuccin-mocha
