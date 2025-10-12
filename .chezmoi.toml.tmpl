@@ -12,9 +12,11 @@ args = [
     "cp {{ `{{ .Target }}` }} {{ `{{ .Target }}` }}.base && code --wait --new-window --merge {{ `{{ .Destination }}` }} {{ `{{ .Target  }}` }} {{ `{{ .Target }}` }}.base {{ `{{ .Source }}` }}",
 ]
 {{- else if eq .chezmoi.os "windows" }}
-command = "cmd"
+command = "powershell"
 args = [
-    "/C",
-    "copy {{ `{{ .Target }}` }} {{ `{{ .Target }}` }}.base && code --wait --new-window --merge {{ `{{ .Destination }}` }} {{ `{{ .Target  }}` }} {{ `{{ .Target }}` }}.base {{ `{{ .Source }}` }}",
+    "-NoProfile",
+    "-NoLogo",
+    "-Command",
+    "cp {{ `{{ .Target }}` }} {{ `{{ .Target }}` }}.base ; code --wait --new-window --merge {{ `{{ .Destination }}` }} {{ `{{ .Target  }}` }} {{ `{{ .Target }}` }}.base {{ `{{ .Source }}` }}",
 ]
 {{- end }}
