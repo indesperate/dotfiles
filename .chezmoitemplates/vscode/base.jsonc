@@ -23,5 +23,7 @@
 	// disable recommendation
 	"extensions.ignoreRecommendations": true,
 	// diff
-	"diffEditor.hideUnchangedRegions.enabled": true
+	"diffEditor.hideUnchangedRegions.enabled": true,
+	// open local links
+	"security.promptForLocalFileProtocolHandling": false
 }

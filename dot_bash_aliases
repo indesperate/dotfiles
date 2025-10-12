@@ -19,10 +19,6 @@ if [ "$(command -v chezmoi)" ]; then
   alias chi='chezmoi'
 fi
 
-if [ "$(command -v zoxide)" ]; then
-  alias cd='z'
-fi
-
 if [ "$(command -v zellij)" ]; then
   alias zj='zellij'
 fi
