@@ -95,4 +95,4 @@ vnoremap > >gv
 vnoremap . :normal.<cr>
 nnoremap Y y$
 nnoremap <leader>n :Lexplore<CR>
-colorscheme desert
+colorscheme default
