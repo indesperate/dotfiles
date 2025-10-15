@@ -2,8 +2,10 @@
 	"extensions.experimental.affinity": {
 		"vscodevim.vim": 1
 	},
-	"vim.hlsearch": true,
-	"vim.inccommand": "replace",
+	"vim.sneak": true,
+	"vim.showMarksInGutter": true,
+	"vim.smartRelativeLine": true,
+	"vim.useSystemClipboard": true,
 	"vim.leader": "<space>",
 	"vim.substitutionTextColor": "#CBA6F7",
 	"vim.enableNeovim": true,
@@ -16,11 +18,6 @@
 		{
 			"before": ["L"],
 			"commands": ["workbench.action.nextEditor"],
-			"silent": true
-		},
-		{
-			"before": ["<leader>", "m"],
-			"commands": ["bookmarks.toggleLabeled"],
 			"silent": true
 		},
 		{
@@ -39,11 +36,6 @@
 			"silent": true
 		},
 		{
-			"before": ["<leader>", "f", "m"],
-			"commands": ["bookmarks.list"],
-			"silent": true
-		},
-		{
 			"before": ["<leader>", "a"],
 			"commands": ["editor.action.quickFix"],
 			"silent": true
@@ -59,8 +51,13 @@
 			"silent": true
 		},
 		{
-			"before": ["g", "i"],
-			"commands": ["editor.action.goToImplementation"],
+			"before": ["g", "p", "d"],
+			"commands": ["editor.action.peekDefinition"],
+			"silent": true
+		},
+		{
+			"before": ["g", "p", "r"],
+			"commands": ["editor.action.referenceSearch.trigger"],
 			"silent": true
 		},
 		{
@@ -95,16 +92,6 @@
 			"silent": true
 		},
 		{
-			"before": ["[", "m"],
-			"commands": ["bookmarks.jumpToPrevious"],
-			"silent": true
-		},
-		{
-			"before": ["]", "m"],
-			"commands": ["bookmarks.jumpToNext"],
-			"silent": true
-		},
-		{
 			"before": ["[", "d"],
 			"commands": ["editor.action.marker.prev"],
 			"silent": true
@@ -117,11 +104,6 @@
 		{
 			"before": ["<leader>", "n", "f"],
 			"commands": ["workbench.explorer.fileView.focus"],
-			"silent": true
-		},
-		{
-			"before": ["<leader>", "n", "m"],
-			"commands": ["bookmarksExplorer.focus"],
 			"silent": true
 		},
 		{
