@@ -5,7 +5,6 @@
 	"vim.sneak": true,
 	"vim.showMarksInGutter": true,
 	"vim.smartRelativeLine": true,
-	"vim.useSystemClipboard": true,
 	"vim.leader": "<space>",
 	"vim.substitutionTextColor": "#CBA6F7",
 	"vim.enableNeovim": true,
@@ -130,6 +129,10 @@
 		}
 	],
 	"vim.visualModeKeyBindingsNonRecursive": [
+		{
+			"before": ["p"],
+			"after": ["p", "g", "v", "y"]
+		},
 		{
 			"before": ["c-c"],
 			"commands": ["editor.action.clipboardCopyAction"],

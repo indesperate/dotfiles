@@ -3,7 +3,7 @@ scoop install `
 aria2 `
 bat `
 biome `
-btop `
+bottom `
 charm-gum `
 chezmoi `
 cmake `
@@ -24,7 +24,6 @@ gh `
 git `
 gitui `
 glow `
-go `
 hexyl `
 jj `
 less `
@@ -36,7 +35,7 @@ mods `
 motrix `
 mpv `
 neovim `
-nodejs-lts `
+nodejs `
 nu `
 obsidian `
 ouch `
@@ -55,7 +54,6 @@ ventoy `
 vhs `
 yazi `
 yt-dlp `
-zed `
 zig `
 zls `
 zoxide
