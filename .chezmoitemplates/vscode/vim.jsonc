@@ -70,6 +70,16 @@
 			"silent": true
 		},
 		{
+			"before": ["g", ","],
+			"commands": ["workbench.action.navigateForwardInEditLocations"],
+			"silent": true
+		},
+		{
+			"before": ["g", ";"],
+			"commands": ["workbench.action.navigateBackInEditLocations"],
+			"silent": true
+		},
+		{
 			"before": ["<leader>", "="],
 			"commands": ["editor.action.formatDocument"],
 			"silent": true
@@ -129,10 +139,6 @@
 		}
 	],
 	"vim.visualModeKeyBindingsNonRecursive": [
-		{
-			"before": ["p"],
-			"after": ["p", "g", "v", "y"]
-		},
 		{
 			"before": ["c-c"],
 			"commands": ["editor.action.clipboardCopyAction"],

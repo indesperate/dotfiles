@@ -7,5 +7,7 @@
 	// leetcode
 	"leetcode.endpoint": "leetcode-cn",
 	"leetcode.workspaceFolder": "D:\\LeetCode",
-	"leetcode.defaultLanguage": "cpp"
+	"leetcode.defaultLanguage": "cpp",
+	//
+	"terminal.integrated.defaultProfile.windows": "Nushell"
 }
