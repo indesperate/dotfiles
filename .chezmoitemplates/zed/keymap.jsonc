@@ -6,50 +6,53 @@
 // To see the default key bindings run `zed: open default keymap`
 // from the command palette.
 [
-  {
-    "context": "Workspace",
-    "bindings": {}
-  },
-  {
-    "context": "Editor && vim_mode == normal",
-    "bindings": {
-      "H": "vim::GoToPreviousTab",
-      "L": "vim::GoToTab",
-      "s": "vim::PushSneak"
-    }
-  },
-  {
-    "context": "Editor && vim_mode == insert",
-    "bindings": {
-      "ctrl-j": "editor::ShowCompletions",
-      "ctrl-k": "editor::ShowSignatureHelp"
-    }
-  },
-  {
-    "context": "(VimControl || (!Editor && !Terminal))",
-    "bindings": {
-      "ctrl-j": "workspace::ActivatePaneDown",
-      "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-h": "workspace::ActivatePaneLeft",
-      "ctrl-l": "workspace::ActivatePaneRight"
-    }
-  },
-  {
-    "context": "(ProjectPanel && not_editing)",
-    "bindings": {
-      "a": "project_panel::NewFile",
-      "A": "project_panel::NewDirectory",
-      "r": "project_panel::Rename",
-      "d": "project_panel::Delete",
-      "y": "project_panel::Copy",
-      "c": "workspace::CopyPath",
-      "p": "project_panel::Paste"
-    }
-  },
-  {
-    "context": "Editor",
-    "bindings": {
-      "ctrl-space": null
-    }
-  }
+	{
+		"context": "Workspace",
+		"bindings": {}
+	},
+	{
+		"context": "Editor && vim_mode == normal",
+		"bindings": {
+			"H": "vim::GoToPreviousTab",
+			"L": "vim::GoToTab",
+			"s": "vim::PushSneak",
+			"S": "vim::PushSneakBackward",
+			"space a": "editor::ToggleCodeActions",
+			"space r": "editor::Rename"
+		}
+	},
+	{
+		"context": "Editor && vim_mode == insert",
+		"bindings": {
+			"ctrl-j": "editor::ShowCompletions",
+			"ctrl-k": "editor::ShowSignatureHelp"
+		}
+	},
+	{
+		"context": "(VimControl || (!Editor && !Terminal))",
+		"bindings": {
+			"ctrl-j": "workspace::ActivatePaneDown",
+			"ctrl-k": "workspace::ActivatePaneUp",
+			"ctrl-h": "workspace::ActivatePaneLeft",
+			"ctrl-l": "workspace::ActivatePaneRight"
+		}
+	},
+	{
+		"context": "(ProjectPanel && not_editing)",
+		"bindings": {
+			"a": "project_panel::NewFile",
+			"A": "project_panel::NewDirectory",
+			"r": "project_panel::Rename",
+			"d": "project_panel::Delete",
+			"y": "project_panel::Copy",
+			"c": "workspace::CopyPath",
+			"p": "project_panel::Paste"
+		}
+	},
+	{
+		"context": "Editor",
+		"bindings": {
+			"ctrl-space": null
+		}
+	}
 ]

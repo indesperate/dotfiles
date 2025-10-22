@@ -7,33 +7,33 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "disable_ai": true,
-  "relative_line_numbers": true,
-  "gutter": {
-    "line_numbers": true
-  },
-  "minimap": {
-    "show": "auto"
-  },
-  "cursor_blink": true,
-  "show_whitespaces": "trailing",
-  "base_keymap": "VSCode",
-  "icon_theme": "Catppuccin Mocha",
-  "buffer_font_size": 16.0,
-  "buffer_font_family": "Maple Mono NF CN",
-  "vim_mode": true,
-  "vim": {
-    "use_system_clipboard": "on_yank",
-    "toggle_relative_line_numbers": true,
-    "use_smartcase_find": true
-  },
-  "terminal": {
-    "cursor_shape": "bar",
-    "line_height": "standard"
-  },
-  "theme": {
-    "mode": "dark",
-    "light": "Catppuccin Mocha (Blur) [Heavy]",
-    "dark": "Catppuccin Mocha (Blur) [Heavy]"
-  }
+	"disable_ai": true,
+	"relative_line_numbers": true,
+	"gutter": {
+		"line_numbers": true
+	},
+	"minimap": {
+		"show": "auto"
+	},
+	"cursor_blink": true,
+	"show_whitespaces": "trailing",
+	"base_keymap": "VSCode",
+	"icon_theme": "Material Icon Theme",
+	"buffer_font_size": 16.0,
+	"buffer_font_family": "Maple Mono NF CN",
+	"vim_mode": true,
+	"vim": {
+		"use_system_clipboard": "on_yank",
+		"toggle_relative_line_numbers": true,
+		"use_smartcase_find": true
+	},
+	"terminal": {
+		"cursor_shape": "bar",
+		"line_height": "standard"
+	},
+	"theme": {
+		"mode": "dark",
+		"light": "Catppuccin Mocha (Blur) [Light]",
+		"dark": "Catppuccin Espresso (Blur)"
+	}
 }
