@@ -21,6 +21,9 @@
 	"icon_theme": "Material Icon Theme",
 	"buffer_font_size": 16.0,
 	"buffer_font_family": "Maple Mono NF CN",
+	"buffer_font_features": {
+		"calt": true
+	},
 	"vim_mode": true,
 	"vim": {
 		"use_system_clipboard": "on_yank",
@@ -29,11 +32,66 @@
 	},
 	"terminal": {
 		"cursor_shape": "bar",
-		"line_height": "standard"
+		"line_height": "standard",
+		"font_features": {
+			"calt": true
+		}
 	},
 	"theme": {
 		"mode": "dark",
 		"light": "Catppuccin Mocha (Blur) [Light]",
 		"dark": "Catppuccin Espresso (Blur)"
+	},
+	"inlay_hints": {
+		"enabled": true
+	},
+	"diagnostics": {
+		"inline": {
+			"enabled": true
+		}
+	},
+	"languages": {
+		"JavaScript": {
+			"formatter": {
+				"language_server": {
+					"name": "biome"
+				}
+			}
+		},
+		"TypeScript": {
+			"formatter": {
+				"language_server": {
+					"name": "biome"
+				}
+			}
+		},
+		"TSX": {
+			"formatter": {
+				"language_server": {
+					"name": "biome"
+				}
+			}
+		},
+		"JSON": {
+			"formatter": {
+				"language_server": {
+					"name": "biome"
+				}
+			}
+		},
+		"JSONC": {
+			"formatter": {
+				"language_server": {
+					"name": "biome"
+				}
+			}
+		},
+		"CSS": {
+			"formatter": {
+				"language_server": {
+					"name": "biome"
+				}
+			}
+		}
 	}
 }

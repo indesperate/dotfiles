@@ -18,7 +18,8 @@
 			"s": "vim::PushSneak",
 			"S": "vim::PushSneakBackward",
 			"space a": "editor::ToggleCodeActions",
-			"space r": "editor::Rename"
+			"space r": "editor::Rename",
+			"space =": "editor::Format"
 		}
 	},
 	{
