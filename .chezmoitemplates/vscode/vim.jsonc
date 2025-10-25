@@ -119,6 +119,16 @@
 			"before": ["K"],
 			"commands": ["editor.action.showDefinitionPreviewHover"],
 			"silent": true
+		},
+		{
+			"before": ["g", "l"],
+			"commands": ["editor.action.addSelectionToNextFindMatch"],
+			"silent": true
+		},
+		{
+			"before": ["g", "L"],
+			"commands": ["editor.action.addSelectionToPreviousFindMatch"],
+			"silent": true
 		}
 	],
 	"vim.insertModeKeyBindingsNonRecursive": [
@@ -139,6 +149,16 @@
 		}
 	],
 	"vim.visualModeKeyBindingsNonRecursive": [
+		{
+			"before": ["g", "l"],
+			"commands": ["editor.action.addSelectionToNextFindMatch"],
+			"silent": true
+		},
+		{
+			"before": ["g", "L"],
+			"commands": ["editor.action.addSelectionToPreviousFindMatch"],
+			"silent": true
+		},
 		{
 			"before": ["c-c"],
 			"commands": ["editor.action.clipboardCopyAction"],
