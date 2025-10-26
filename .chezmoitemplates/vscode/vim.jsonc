@@ -8,6 +8,7 @@
 	"vim.leader": "<space>",
 	"vim.substitutionTextColor": "#CBA6F7",
 	"vim.enableNeovim": true,
+	"vim.camelCaseMotion.enable": true,
 	"vim.normalModeKeyBindingsNonRecursive": [
 		{
 			"before": ["H"],
@@ -65,7 +66,7 @@
 			"silent": true
 		},
 		{
-			"before": ["g", "D"],
+			"before": ["c-w", "g", "d"],
 			"commands": ["editor.action.revealDefinitionAside"],
 			"silent": true
 		},
@@ -85,7 +86,7 @@
 			"silent": true
 		},
 		{
-			"before": ["[", "g"],
+			"before": ["[", "c"],
 			"commands": [
 				"workbench.action.editor.previousChange",
 				"workbench.action.compareEditor.previousChange"
@@ -93,7 +94,7 @@
 			"silent": true
 		},
 		{
-			"before": ["]", "g"],
+			"before": ["]", "c"],
 			"commands": [
 				"workbench.action.editor.nextChange",
 				"workbench.action.compareEditor.nextChange"
@@ -129,6 +130,11 @@
 			"before": ["g", "L"],
 			"commands": ["editor.action.addSelectionToPreviousFindMatch"],
 			"silent": true
+		},
+		{
+			"before": ["d", "u"],
+			"commands": ["git.diff.stageHunk"],
+			"silent": false
 		}
 	],
 	"vim.insertModeKeyBindingsNonRecursive": [
@@ -149,6 +155,11 @@
 		}
 	],
 	"vim.visualModeKeyBindingsNonRecursive": [
+		{
+			"before": ["u"],
+			"commands": ["git.stageSelectedRanges"],
+			"silent": true
+		},
 		{
 			"before": ["g", "l"],
 			"commands": ["editor.action.addSelectionToNextFindMatch"],

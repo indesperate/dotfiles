@@ -11,6 +11,16 @@
 		"bindings": {}
 	},
 	{
+		"context": "vim_operator == a || vim_operator == i || vim_operator == cs",
+		"bindings": {
+			"q": "vim::MiniQuotes",
+			"b": "vim::MiniBrackets",
+			"Q": "vim::AnyQuotes",
+			"B": "vim::AnyBrackets",
+			"space w": "vim::Subword"
+		}
+	},
+	{
 		"context": "Editor && vim_mode == normal",
 		"bindings": {
 			"H": "vim::GoToPreviousTab",
@@ -48,6 +58,15 @@
 			"y": "project_panel::Copy",
 			"c": "workspace::CopyPath",
 			"p": "project_panel::Paste"
+		}
+	},
+	{
+		"context": "VimControl && !menu && vim_mode != operator",
+		"bindings": {
+			"space w": "vim::NextSubwordStart",
+			"space b": "vim::PreviousSubwordStart",
+			"space e": "vim::NextSubwordEnd",
+			"space g e": "vim::PreviousSubwordEnd"
 		}
 	},
 	{
