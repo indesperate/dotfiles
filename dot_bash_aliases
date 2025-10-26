@@ -1,107 +1,115 @@
 if [ "$(command -v nvim)" ]; then
-  alias vi='nvim --clean'
-  alias vim=nvim
-  alias vo='nvim +Oil'
-  function vs() {
-    local target="$1"
-    local path="$2"
-    if [ -z "$target" ]; then
-      target=remote
-    fi
-    if [ -z "$path" ]; then
-      path=/
-    fi
-    nvim "oil-ssh://$target/$path"
-  }
+    alias vi='nvim --clean'
+    alias vim=nvim
+    alias vo='nvim +Oil'
+    function vs() {
+        local target="$1"
+        local path="$2"
+        if [ -z "$target" ]; then
+            target=remote
+        fi
+        if [ -z "$path" ]; then
+            path=/
+        fi
+        nvim "oil-ssh://$target/$path"
+    }
+fi
+
+if [ "$(command -v helix)" ]; then
+    alias hx='helix'
+fi
+
+if [ "$(command -v just)" ]; then
+    alias j='just'
 fi
 
 if [ "$(command -v chezmoi)" ]; then
-  alias chi='chezmoi'
+    alias che='chezmoi'
 fi
 
 if [ "$(command -v zellij)" ]; then
-  alias zj='zellij'
+    alias zj='zellij'
 fi
 
 if [ "$(command -v eza)" ]; then
-  alias ls='eza --icons=auto'
-  alias ll='eza -al --icons=auto'
-  alias la='eza -a --icons=auto'
-  alias l='eza -l --icons=auto'
+    alias ls='eza --icons=auto'
+    alias ll='eza -al --icons=auto'
+    alias la='eza -a --icons=auto'
+    alias l='eza -l --icons=auto'
 fi
 
 if [ "$(command -v bat)" ]; then
-  alias cat='bat'
+    alias cat='bat'
 fi
 
 if [ "$(command -v errno)" ]; then
-  alias perr='errno $?'
+    alias perr='errno $?'
 fi
 
 function trim() {
-  awk '{$1=$1}1' "$@"
+    awk '{$1=$1}1' "$@"
 }
 
 function vimd() {
-  vim "+set filetype=objdump" "$@"
+    vim "+set filetype=objdump" "$@"
 }
 
 function gd() {
-  gdb -x ~/.config/gdbinit "$@"
+    gdb -x ~/.config/gdbinit "$@"
 }
 
 function ii() {
-  xdg-open "$@"
+    xdg-open "$@"
 }
 
 # fork bomb :(){:|:&};:
 #
 # gdb tmux
 function gdt() {
-  local id
-  id="$(tmux split-pane -hPF "#D" "tail -f /dev/null")"
-  tmux last-pane
-  local tty
-  tty="$(tmux display-message -p -t "$id" '#{pane_tty}')"
-  gd -ex "dashboard source -output $tty" -ex "dashboard source -style height 0" "$@"
-  tmux kill-pane -t "$id"
+    local id
+    id="$(tmux split-pane -hPF "#D" "tail -f /dev/null")"
+    tmux last-pane
+    local tty
+    tty="$(tmux display-message -p -t "$id" '#{pane_tty}')"
+    gd -ex "dashboard source -output $tty" -ex "dashboard source -style height 0" "$@"
+    tmux kill-pane -t "$id"
 }
 
 function br {
-  local cmd cmd_file
-  cmd_file=$(mktemp)
-  if broot --outcmd "$cmd_file" "$@"; then
-    cmd=$(<"$cmd_file")
-    eval "$cmd"
-  fi
-  command rm -f "$cmd_file"
+    local cmd cmd_file
+    cmd_file=$(mktemp)
+    if broot --outcmd "$cmd_file" "$@"; then
+        cmd=$(<"$cmd_file")
+        eval "$cmd"
+    fi
+    command rm -f "$cmd_file"
 }
 
 function y() {
-  local tmp cwd
-  tmp=$(mktemp -t "yazi-cwd.XXXXXX")
-  yazi "$@" --cwd-file="$tmp"
-  IFS= read -r -d '' cwd <"$tmp"
-  [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-  rm -f -- "$tmp"
+    local tmp cwd
+    tmp=$(mktemp -t "yazi-cwd.XXXXXX")
+    yazi "$@" --cwd-file="$tmp"
+    IFS= read -r -d '' cwd <"$tmp"
+    [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+    rm -f -- "$tmp"
 }
 
 function set_proxy() {
-  local port=$1
-  if [ -z "$port" ]; then
-    port=10808
-  fi
-  export http_proxy="http://0.0.0.0:${port}"
-  export https_proxy="http://0.0.0.0:${port}"
-  export all_proxy="http://0.0.0.0:${port}"
+    local port=$1
+    if [ -z "$port" ]; then
+        port=10808
+    fi
+    export http_proxy="http://0.0.0.0:${port}"
+    export https_proxy="http://0.0.0.0:${port}"
+    export all_proxy="http://0.0.0.0:${port}"
 }
 
 # tealdeer with vim
 function tv() {
-  command tldr -r "$@" | vim "+set filetype=markdown" -
+    command tldr -r "$@" | vim "+set filetype=markdown" -
 }
 
 # set gdb attach capbility
 function set_ptrace() {
-  echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+    echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
 }

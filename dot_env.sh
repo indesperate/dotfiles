@@ -1,10 +1,10 @@
 append_path() {
-  if [ -d "$1" ]; then
-    case ":$PATH:" in
-    *":$1:"*) ;;
-    *) PATH=$1${PATH:+:${PATH}} ;;
-    esac
-  fi
+    if [ -d "$1" ]; then
+        case ":$PATH:" in
+        *":$1:"*) ;;
+        *) PATH=$1${PATH:+:${PATH}} ;;
+        esac
+    fi
 }
 
 append_path "$HOME/bin"
@@ -35,8 +35,8 @@ export FZF_CTRL_R_OPTS="
 # --header 'CTRL-Y to copy, CTRL-/ to preview'"
 
 if [ "$(command -v nvim)" ]; then
-  export EDITOR=nvim
-  export MANPAGER='nvim +Man!'
+    export EDITOR=nvim
+    export MANPAGER='nvim +Man!'
 fi
 
 export GOPATH=$HOME/.go
@@ -44,6 +44,6 @@ export GOPATH=$HOME/.go
 # openrouter
 
 if [ "$(command -v skate)" ]; then
-  OPENROUTER_API_KEY=$(skate get openrouter_api_key)
-  export OPENROUTER_API_KEY
+    OPENROUTER_API_KEY=$(skate get openrouter_api_key)
+    export OPENROUTER_API_KEY
 fi

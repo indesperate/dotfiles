@@ -3,6 +3,9 @@
 alias vim = nvim
 alias vi = nvim --clean
 alias vo = nvim +Oil
+alias hx = helix
+alias j = just
+alias che = chezmoi
 
 
 def --env y [...args] {

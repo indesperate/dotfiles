@@ -39,11 +39,11 @@ shopt -s dotglob
 shopt -s nocaseglob
 
 if [ -f "$HOME/.env.sh" ]; then
-  . "$HOME/.env.sh"
+    . "$HOME/.env.sh"
 fi
 
 if [ -f "$HOME/.bash_aliases" ]; then
-  . "$HOME/.bash_aliases"
+    . "$HOME/.bash_aliases"
 fi
 
 bind -m vi-command "v":edit-and-execute-command
@@ -52,12 +52,12 @@ eval "$(zoxide init bash)"
 eval "$(fzf --bash)"
 
 history_update() {
-  # command out found error
-  if [ $? -ne 127 ]; then
-    history -a
-  else
-    history -d $((HISTCMD - 1))
-  fi
+    # command out found error
+    if [ $? -ne 127 ]; then
+        history -a
+    else
+        history -d $((HISTCMD - 1))
+    fi
 }
 
 export PROMPT_COMMAND="history_update;$PROMPT_COMMAND"
