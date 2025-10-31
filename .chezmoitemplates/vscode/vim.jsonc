@@ -2,7 +2,13 @@
 	"extensions.experimental.affinity": {
 		"vscodevim.vim": 1
 	},
-	"vim.sneak": true,
+	"flash-vscode.dimOpacity": "0.8",
+	"flash-vscode.matchColor": "#b4befe",
+	"flash-vscode.matchFontWeight": "bold",
+	"flash-vscode.labelColor": "#fab387",
+	"flash-vscode.labelBackgroundColor": "#1e1e2e",
+	"flash-vscode.labelQuestionBackgroundColor": "#1e1e2e",
+	"flash-vscode.labelFontWeight": "bold",
 	"vim.showMarksInGutter": true,
 	"vim.smartRelativeLine": true,
 	"vim.leader": "<space>",
@@ -135,6 +141,18 @@
 			"before": ["d", "u"],
 			"commands": ["git.diff.stageHunk"],
 			"silent": false
+		},
+		{
+			"before": ["s"],
+			"commands": ["flash-vscode.start"]
+		},
+		{
+			"before": ["S"],
+			"commands": ["flash-vscode.startSelection"]
+		},
+		{
+			"before": ["<BS>"],
+			"commands": ["flash-vscode.backspace"]
 		}
 	],
 	"vim.insertModeKeyBindingsNonRecursive": [
