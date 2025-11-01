@@ -29,7 +29,8 @@
 			"S": "vim::PushSneakBackward",
 			"space a": "editor::ToggleCodeActions",
 			"space r": "editor::Rename",
-			"space =": "editor::Format"
+			"space =": "editor::Format",
+			"space f": "file_finder::Toggle"
 		}
 	},
 	{

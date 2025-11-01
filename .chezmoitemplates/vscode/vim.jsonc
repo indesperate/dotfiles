@@ -27,17 +27,17 @@
 			"silent": true
 		},
 		{
-			"before": ["<leader>", "f", "g"],
+			"before": ["<leader>", "s"],
 			"commands": ["workbench.action.quickTextSearch"],
 			"silent": true
 		},
 		{
-			"before": ["<leader>", "f", "s"],
+			"before": ["g", "s"],
 			"commands": ["workbench.action.gotoSymbol"],
 			"silent": true
 		},
 		{
-			"before": ["<leader>", "f", "f"],
+			"before": ["<leader>", "f"],
 			"commands": ["workbench.action.quickOpen"],
 			"silent": true
 		},
