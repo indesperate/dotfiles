@@ -13,10 +13,6 @@
 	{
 		"context": "vim_operator == a || vim_operator == i || vim_operator == cs",
 		"bindings": {
-			"q": "vim::MiniQuotes",
-			"b": "vim::MiniBrackets",
-			"Q": "vim::AnyQuotes",
-			"B": "vim::AnyBrackets",
 			"space w": "vim::Subword"
 		}
 	},
