@@ -27,7 +27,12 @@
 			"silent": true
 		},
 		{
-			"before": ["<leader>", "s"],
+			"before": ["<leader>", "/"],
+			"commands": ["search.action.openEditor"],
+			"silent": true
+		},
+		{
+			"before": ["g", "/"],
 			"commands": ["workbench.action.quickTextSearch"],
 			"silent": true
 		},
