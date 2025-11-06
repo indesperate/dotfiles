@@ -82,6 +82,16 @@
 			"silent": true
 		},
 		{
+			"before": ["c-i"],
+			"commands": ["workbench.action.navigateForwardInNavigationLocations"],
+			"silent": true
+		},
+		{
+			"before": ["c-o"],
+			"commands": ["workbench.action.navigateBackInNavigationLocations"],
+			"silent": true
+		},
+		{
 			"before": ["g", ","],
 			"commands": ["workbench.action.navigateForwardInEditLocations"],
 			"silent": true
