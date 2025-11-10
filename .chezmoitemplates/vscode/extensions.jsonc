@@ -60,5 +60,7 @@
 	// markdown
 	"[markdown]": {
 		"editor.defaultFormatter": "yzhang.markdown-all-in-one"
-	}
+	},
+	// code spell checker
+	"cSpell.enabled": false
 }
