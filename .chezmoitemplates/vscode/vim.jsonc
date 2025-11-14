@@ -139,7 +139,7 @@
 		},
 		{
 			"before": ["K"],
-			"commands": ["editor.action.showDefinitionPreviewHover"],
+			"commands": ["editor.action.showHover"],
 			"silent": true
 		},
 		{
