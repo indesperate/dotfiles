@@ -1,0 +1,17 @@
+
+font-family = "Maple Mono NF CN"
+
+theme = Catppuccin Mocha
+background-opacity = 0.8
+background = #000000
+
+keybind = F11=toggle_fullscreen
+
+keybind = ctrl+b>c=new_tab
+keybind = ctrl+b>n=next_tab
+keybind = ctrl+b>p=previous_tab
+
+keybind = ctrl+b>-=new_split:down
+keybind = ctrl+b>\=new_split:right
+
+keybind = ctrl+v=paste_from_clipboard

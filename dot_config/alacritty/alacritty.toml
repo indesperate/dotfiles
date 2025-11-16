@@ -25,9 +25,7 @@ vi_mode_style = { shape = "Block", blinking = "On" }
 osc52 = "OnlyCopy"
 
 [mouse]
-bindings = [
-  { mouse = "Right", action = "Copy" },
-]
+bindings = [{ mouse = "Right", action = "Copy" }]
 hide_when_typing = true
 
 [keyboard]
@@ -36,7 +34,8 @@ bindings = [
   { key = "b", mods = "Control", action = "ToggleViMode" },
   { key = "c", mode = "~Search|Vi", action = "CreateNewWindow" },
   { key = "x", mode = "~Search|Vi", action = "Quit" },
-  { key = "q", mode = "~Search|Vi", action = "ToggleViMode" },
+  { key = "Enter", mode = "~Search|Vi", action = "ToggleViMode" },
+  { key = "q", mods = "Control", mode = "~Search|Vi", action = "ToggleBlockSelection" },
   { key = "F11", action = "ToggleFullScreen" },
 ]
 
@@ -49,4 +48,4 @@ post_processing = true
 persist = false
 mouse.enabled = true
 binding = { key = "o", mode = "~Search|Vi" }
-regex = "(vscode://ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+regex = "(vscode://|ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
