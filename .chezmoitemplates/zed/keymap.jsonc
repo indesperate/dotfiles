@@ -26,7 +26,10 @@
 			"space a": "editor::ToggleCodeActions",
 			"space r": "editor::Rename",
 			"space =": "editor::Format",
-			"space f": "file_finder::Toggle"
+			"space f f": "file_finder::Toggle",
+			"space f s": "project_symbols::Toggle",
+			"space f g": "pane::DeploySearch",
+			"space f d": "diagnostics::Deploy"
 		}
 	},
 	{
