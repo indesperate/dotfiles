@@ -138,7 +138,7 @@
 			"silent": true
 		},
 		{
-			"before": ["<leader>", "n", "f"],
+			"before": ["<leader>", "n"],
 			"commands": ["workbench.explorer.fileView.focus"],
 			"silent": true
 		},

@@ -56,8 +56,13 @@
 	},
 	{
 		"key": "q",
+		"command": "workbench.action.togglePanel",
+		"when": "workbench.panel.markers.view.active && !editorFocus && !inputFocus"
+	},
+	{
+		"key": "q",
 		"command": "workbench.action.toggleSidebarVisibility",
-		"when": "vim.mode == 'Normal' && !editorFocus && !inputFocus"
+		"when": "filesExplorerFocus && !editorFocus && !inputFocus"
 	},
 	{
 		"key": "ctrl+p",
