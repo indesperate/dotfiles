@@ -158,21 +158,9 @@
 			"silent": true
 		},
 		{
-			"before": ["d", "u"],
+			"before": ["d", "o"],
 			"commands": ["git.diff.stageHunk"],
-			"silent": false
-		},
-		{
-			"before": ["s"],
-			"commands": ["flash-vscode.start"]
-		},
-		{
-			"before": ["S"],
-			"commands": ["flash-vscode.startSelection"]
-		},
-		{
-			"before": ["<BS>"],
-			"commands": ["flash-vscode.backspace"]
+			"silent": true
 		}
 	],
 	"vim.insertModeKeyBindingsNonRecursive": [
@@ -193,11 +181,6 @@
 		}
 	],
 	"vim.visualModeKeyBindingsNonRecursive": [
-		{
-			"before": ["u"],
-			"commands": ["git.stageSelectedRanges"],
-			"silent": true
-		},
 		{
 			"before": ["g", "l"],
 			"commands": ["editor.action.addSelectionToNextFindMatch"],
