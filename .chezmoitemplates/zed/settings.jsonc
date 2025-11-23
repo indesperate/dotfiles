@@ -8,16 +8,10 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
 	"disable_ai": true,
-	"relative_line_numbers": true,
-	"gutter": {
-		"line_numbers": true
-	},
 	"minimap": {
 		"show": "auto"
 	},
-	"cursor_blink": true,
 	"show_whitespaces": "trailing",
-	"base_keymap": "VSCode",
 	"icon_theme": "Material Icon Theme",
 	"buffer_font_size": 16.0,
 	"buffer_font_family": "Maple Mono NF CN",
