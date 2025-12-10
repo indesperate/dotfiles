@@ -41,8 +41,8 @@ $env.config.cursor_shape.vi_normal = "block"
 
 # starship config, zoxide configure after starship
 mkdir ($nu.data-dir | path join "vendor/autoload")
-starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
-zoxide init nushell | save -f ($nu.data-dir | path join "vendor/autoload/zoxide.nu")
+^starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+^zoxide init nushell | save -f ($nu.data-dir | path join "vendor/autoload/zoxide.nu")
 
 # modules
 use std/clip copy

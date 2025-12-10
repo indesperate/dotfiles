@@ -50,6 +50,7 @@ bind -m vi-command "v":edit-and-execute-command
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
 eval "$(fzf --bash)"
+eval "$(mise activate bash)"
 
 history_update() {
     # command out found error
