@@ -6,6 +6,9 @@
     editor = nvim
     fsmonitor = true
     untrackedcache = true
+{{- if eq .chezmoi.os "windows" }}
+    autocrlf = true
+{{- end }}
 [interactive]
     diffFilter = delta --color-only
 [delta]
