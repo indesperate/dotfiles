@@ -7,13 +7,13 @@ $shell\
 [](grey)\
 $username\
 $hostname\
-[](yellow)\
+[ ](yellow)\
 $directory\
 [](yellow)\
 $git_branch\
 $git_commit\
 $git_status\
-[](lightblue)\
+[ ](lightblue)\
 $cmd_duration\
 [](lightblue)\
 $time\
@@ -28,14 +28,14 @@ add_newline = false
 symbol = ""
 style = "fg:dark bg:green"
 format = """
-[](green)\
+[ ](green)\
 [ $symbol$branch]($style)\
 """
 
 [git_commit]
 style = "fg:dark bg:green"
 format = """
-[](green)\
+[ ](green)\
 [ $hash]($style)\
 """
 
@@ -92,7 +92,7 @@ disabled = false
 style_root = "red"
 style_user = "purple"
 format = """
-[]($style)\
+[ ]($style)\
 [ $user](bg:$style fg:black)\
 []($style)\
 """
@@ -100,7 +100,7 @@ format = """
 disabled = false
 ssh_symbol = " "
 format = """
-[](purple)\
+[ ](purple)\
 [$ssh_symbol](bg:purple fg:black)[$hostname](bg:purple fg:black)\
 [](purple)\
 """
