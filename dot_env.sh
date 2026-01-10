@@ -40,10 +40,3 @@ if [ "$(command -v nvim)" ]; then
 fi
 
 export GOPATH=$HOME/.go
-
-# openrouter
-
-if [ "$(command -v skate)" ]; then
-    OPENROUTER_API_KEY=$(skate get openrouter_api_key)
-    export OPENROUTER_API_KEY
-fi
