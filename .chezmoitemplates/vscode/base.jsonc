@@ -25,5 +25,6 @@
 	// diff
 	"diffEditor.hideUnchangedRegions.enabled": true,
 	// open local links
-	"security.promptForLocalFileProtocolHandling": false
+	"security.promptForLocalFileProtocolHandling": false,
+	"workbench.editor.useModal": "some"
 }
