@@ -90,6 +90,9 @@
 					"name": "biome"
 				}
 			}
+		},
+		"Python": {
+			"language_servers": ["ty"]
 		}
 	}
 }
