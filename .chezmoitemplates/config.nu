@@ -45,4 +45,4 @@ mkdir ($nu.data-dir | path join "vendor/autoload")
 ^zoxide init nushell | save -f ($nu.data-dir | path join "vendor/autoload/zoxide.nu")
 
 # modules
-use std/clip copy
+use std/clip copy52
