@@ -26,5 +26,6 @@
 	"diffEditor.hideUnchangedRegions.enabled": true,
 	// open local links
 	"security.promptForLocalFileProtocolHandling": false,
-	"workbench.editor.useModal": "some"
+	"workbench.editor.useModal": "some",
+	"workbench.experimental.modernUI": true
 }
