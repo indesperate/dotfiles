@@ -6,6 +6,7 @@ alias vo = nvim +Oil
 alias hx = helix
 alias j = just
 alias che = chezmoi
+alias zj = zellij
 
 
 def --env y [...args] {
