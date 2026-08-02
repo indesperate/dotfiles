@@ -1,5 +1,6 @@
 keybinds clear-defaults=true {
     locked {
+        bind "Alt g" { Write 7; } // Write ^G
         bind "Ctrl g" { SwitchToMode "normal"; }
     }
     pane {
@@ -304,7 +305,7 @@ default_layout "compact"
 //   - true (default, enabled)
 //   - false
 // 
-// pane_frames false
+pane_frames false
  
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)
