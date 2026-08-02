@@ -18,6 +18,8 @@
 	"terminal.integrated.cursorStyle": "line",
 	"terminal.integrated.enableImages": true,
 	"terminal.integrated.fontLigatures.enabled": true,
+	"terminal.integrated.lineHeight": 1,
+	"terminal.integrated.customGlyphs": false,
 	// disable builtin AI
 	"chat.disableAIFeatures": true,
 	// disable recommendation

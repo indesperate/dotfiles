@@ -21,6 +21,14 @@ else
     PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND;}history_update"
 fi
 
-eval "$(zoxide init bash)"
-eval "$(fzf --bash)"
-eval "$(mise activate bash)"
+if command -v zoxide >/dev/null 2>&1; then
+    eval "$(zoxide init bash)"
+fi
+
+if command -v fzf >/dev/null 2>&1; then
+    eval "$(fzf --bash)"
+fi
+
+if command -v mise >/dev/null 2>&1; then
+    eval "$(mise activate bash)"
+fi
