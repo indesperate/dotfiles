@@ -4,3 +4,13 @@ edit = [
     { run = "$EDITOR %s", block = true, for = "unix" },
     { run = "%EDITOR% %s", block = true, for = "windows" },
 ]
+
+[[plugin.prepend_fetchers]]
+url = "*"
+run = "git"
+group = "git"
+
+[[plugin.prepend_fetchers]]
+url = "*/"
+run = "git"
+group = "git"
