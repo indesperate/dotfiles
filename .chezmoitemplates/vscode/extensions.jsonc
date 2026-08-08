@@ -14,7 +14,6 @@
 		"random": true
 	},
 	// cmake
-	"neocmakelsp.lsp_snippets": true,
 	"cmake.outputLogEncoding": "utf8",
 	"cmake.configureOnOpen": false,
 	"cmake.configureOnEdit": false,
@@ -34,10 +33,6 @@
 	//git lens
 	"gitlens.graph.layout": "editor",
 	"gitlens.plusFeatures.enabled": false,
-	// todo tree
-	"todo-tree.highlights.enabled": false,
-	"todo-tree.general.tags": ["TODO", "[TODO]", "FIXME", "[FIXME]"],
-	// format sections
 	// python
 	"[python]": {
 		"editor.defaultFormatter": "charliermarsh.ruff",
@@ -61,6 +56,6 @@
 	"[markdown]": {
 		"editor.defaultFormatter": "yzhang.markdown-all-in-one"
 	},
-	// code spell checker
-	"cSpell.enabled": false
+	// cpp
+	"C_Cpp.intelliSenseEngine": "disabled"
 }

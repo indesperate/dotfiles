@@ -6,10 +6,7 @@
 	"editor.fontSize": 20,
 	"editor.renderWhitespace": "trailing",
 	"editor.guides.bracketPairs": "active",
-	"editor.formatOnSave": false,
-	"editor.formatOnSaveMode": "modificationsIfAvailable",
 	"editor.peekWidgetDefaultFocus": "editor",
-	"editor.gotoLocation.alternativeDefinitionCommand": "editor.action.revealDeclaration",
 	// ui
 	"workbench.colorCustomizations": {
 		"editorCursor.foreground": "#F5BDE6"

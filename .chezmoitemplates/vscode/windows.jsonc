@@ -1,13 +1,3 @@
 {
-	"C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
-	"C_Cpp.inlayHints.parameterNames.enabled": true,
-	"C_Cpp.inlayHints.referenceOperator.enabled": true,
-	"C_Cpp.inlayHints.referenceOperator.showSpace": true,
-	"C_Cpp.clang_format_fallbackStyle": "Google",
-	// leetcode
-	"leetcode.endpoint": "leetcode-cn",
-	"leetcode.workspaceFolder": "D:\\LeetCode",
-	"leetcode.defaultLanguage": "cpp",
-	//
 	"terminal.integrated.defaultProfile.windows": "Nushell"
 }
