@@ -6,14 +6,14 @@ import = ["~/.config/alacritty/catppuccin-mocha.toml"]
 # TERM = "xterm-256color"
 
 [font]
-normal = { family = "Maple Mono NF CN", style = "Bold" }
-size = 12
+normal = { family = "Maple Mono NF CN", style = "SemiBold" }
+builtin_box_drawing = false
 
 [window]
 dimensions = { columns = 120, lines = 30 }
 padding = { x = 8, y = 5 }
 dynamic_padding = true
-decorations = "Full"
+decorations = "full"
 resize_increments = true
 opacity = 0.80
 blur = false
@@ -40,7 +40,7 @@ bindings = [
 ]
 
 [[hints.enabled]]
-command = "xdg-open" # On Linux/BSD
+command = "xdg-open"  # On Linux/BSD
 # command = "open" # On macOS
 # command = { program = "cmd", args = [ "/c", "start", "" ] } # On Windows
 hyperlinks = true
