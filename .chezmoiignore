@@ -3,6 +3,7 @@ README.md
 {{- if ne .chezmoi.os "linux" }}
 .bash_aliases
 .bashrc
+.bash_tools.sh
 .env.sh
 .inputrc
 .vimrc
