@@ -1,9 +1,9 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "b9598e6"
-hash = "384871a15250af3a8f9b3c0289a858ef"
+rev = "3f2b882"
+hash = "bdbbd849c6e6d63b903e60b36ba3ace1"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
-rev = "1a5f787"
-hash = "5ebc8659108fcb68fe853e523115ed3c"
+rev = "be0b21d"
+hash = "80d8146e90f2f6b0883d3682325f27c0"
