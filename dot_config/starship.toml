@@ -1,43 +1,43 @@
-palette = "indesperate"
-continuation_prompt = "[❯](cblue) "
+#:schema https://starship.rs/config-schema.json
+
+palette = "catppuccin_mocha"
 format = """
 $os\
-[](grey)\
+[](lavender)\
 $shell\
 [](grey)\
-$username\
-$hostname\
-[ ](yellow)\
+[ ](peach)\
 $directory\
-[](yellow)\
+[](bg:yellow fg:peach)\
 $git_branch\
 $git_commit\
 $git_status\
-[ ](lightblue)\
-$cmd_duration\
-[](lightblue)\
-$time\
-$python\
-$conda\
+[](fg:yellow bg:green)\
 $c\
-\n$character\
-"""
+$cpp\
+$rust\
+$haskell\
+$python\
+[](fg:green bg:sapphire)\
+$username\
+$hostname\
+[](fg:sapphire bg:lavender)\
+$time\
+[ ](fg:lavender)\
+$cmd_duration\
+$line_break\
+$character"""
+
 add_newline = false
 
 [git_branch]
 symbol = ""
-style = "fg:dark bg:green"
-format = """
-[ ](green)\
-[ $symbol$branch]($style)\
-"""
+style = "bg:yellow"
+format = "[[ $symbol$branch](fg:crust bg:yellow)]($style)"
 
 [git_commit]
-style = "fg:dark bg:green"
-format = """
-[ ](green)\
-[ $hash]($style)\
-"""
+style = "bg:yellow fg:crust"
+format = "[ $hash]($style)"
 
 [git_status]
 conflicted = "󰀧"
@@ -50,66 +50,34 @@ modified = "×${count} "
 staged = "×${count} "
 renamed = "󰄾×${count} "
 deleted = "󰧵×${count} "
-style = "fg:dark bg:green"
-format = """
-[ $all_status$ahead_behind]($style)\
-[](green)\
-"""
+style = "bg:yellow"
+format = "[ [($all_status$ahead_behind)](fg:crust bg:yellow)]($style)"
 
 [character]
-# Note the use of Catppuccin color 'maroon'
-success_symbol = "[❯](cblue)"
-error_symbol = "[❯](red)"
 disabled = false
+success_symbol = "[❯](bold fg:green)"
+error_symbol = "[❯](bold fg:red)"
 
 [directory]
+style = "bg:peach fg:crust"
 read_only = " 󰌾"
-style = "fg:bold dark bg:yellow"
 format = "[  $path$read_only ]($style)"
 disabled = false
-truncation_symbol = ".../"
-fish_style_pwd_dir_length = 2
+fish_style_pwd_dir_length = 1
+truncation_length = 2
 
 [cmd_duration]
-min_time = 0
-format = "[ $duration]($style)"
-style = "fg:black bg:lightblue"
+show_milliseconds = true
+format = " in $duration "
+style = "bg:lavender"
 disabled = false
-
-
-[shell]
-fish_indicator = "󰈺"
-bash_indicator = ""
-zsh_indicator = "󰬡"
-nu_indicator = ""
-powershell_indicator = ""
-format = "[$indicator ]($style)"
-style = "fg:black bg:grey"
-disabled = false
-
-[username]
-disabled = false
-style_root = "red"
-style_user = "purple"
-format = """
-[ ]($style)\
-[ $user](bg:$style fg:black)\
-[]($style)\
-"""
-[hostname]
-disabled = false
-ssh_symbol = " "
-format = """
-[ ](purple)\
-[$ssh_symbol](bg:purple fg:black)[$hostname](bg:purple fg:black)\
-[](purple)\
-"""
+show_notifications = true
+min_time_to_notify = 45000
 
 [os]
+disabled = false
 style = "fg:white"
 format = "[$symbol]($style)"
-disabled = false
-
 
 [os.symbols]
 Android = " "
@@ -121,58 +89,88 @@ Macos = " "
 Ubuntu = " "
 Windows = "󰍲 "
 
-[python]
-symbol = " "
-style = "bg:blue fg:black"
-version_format = "${major}.${minor}"
-format = """
- [](blue)\
-[${symbol}${pyenv_prefix}(${version})(( $virtualenv))]($style)\
-[](blue)\
-"""
+[shell]
+bash_indicator = ""
+fish_indicator = "󰈺"
+zsh_indicator = "󰬡"
+nu_indicator = ""
+powershell_indicator = ""
+format = "[$indicator ]($style)"
+style = "fg:crust bg:lavender"
 disabled = false
-
-[conda]
-style = "bg:green fg:black"
-symbol = "🅒 "
-disabled = false
-format = """
- [](green)\
-[$symbol$environment]($style)\
-[](green)\
-"""
 
 [c]
-style = "bg:peach fg:black"
 symbol = " "
 detect_extensions = ["c", "h", "cpp", "cc", "hpp"]
 version_format = "${major}.${minor}"
-format = """
- [](peach)\
-[$symbol($version(-$name))]($style)\
-[](peach)\
-"""
-disabled = false
+style = "bg:green"
+format = "[[ $symbol($name)-($version)](fg:crust bg:green) ]($style)"
+
+[rust]
+symbol = " "
+style = "bg:green"
+version_format = "${major}.${minor}"
+format = "[[ $symbol($version)](fg:crust bg:green) ]($style)"
+
+[haskell]
+symbol = " "
+style = "bg:green"
+format = "[[ $symbol($version)](fg:crust bg:green) ]($style)"
+
+[python]
+symbol = " "
+style = "bg:green fg:crust"
+version_format = "${major}.${minor}"
+format = "[ ${symbol}(${version})(( $virtualenv)) ]($style)"
 
 [time]
 disabled = false
-style = "bg:cblue fg:black"
-time_format = "%H:%M"
+time_format = "%R"
+style = "bg:lavender"
+format = "[[  $time](fg:crust bg:lavender)]($style)"
+
+[username]
+disabled = false
+style_root = "bold bg:sapphire"
+style_user = "bg:sapphire"
 format = """
- [](cblue)\
-[ $time]($style)\
-[](cblue)\
+[  $user ]($style fg:crust)\
 """
 
+[hostname]
+ssh_symbol = "󰒋 "
+disabled = false
+format = """
+[$ssh_symbol](bg:sapphire fg:crust)[$hostname ](bg:sapphire fg:crust)\
+"""
 
-[palettes.indesperate]
-blue = "#0077c2"
-yellow = "#ff9248"
-dark = "#2d3436"
-green = "#a6e3a1"
-lightblue = "#2e9599"
+[line_break]
+disabled = false
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
 red = "#f38ba8"
-grey = "#a3aed2"
-cblue = "#89b4fa"
+maroon = "#eba0ac"
 peach = "#fab387"
-purple = "#cba6f7"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
