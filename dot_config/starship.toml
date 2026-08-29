@@ -18,10 +18,10 @@ $cpp\
 $rust\
 $haskell\
 $python\
-[](fg:green bg:sapphire)\
+[](fg:green bg:blue)\
 $username\
 $hostname\
-[](fg:sapphire bg:lavender)\
+[](fg:blue bg:lavender)\
 $time\
 [ ](fg:lavender)\
 $cmd_duration\
@@ -32,8 +32,8 @@ add_newline = false
 
 [git_branch]
 symbol = ""
-style = "bg:yellow"
-format = "[[ $symbol$branch](fg:crust bg:yellow)]($style)"
+style = "fg:crust bg:yellow"
+format = "[ $symbol$branch]($style)"
 
 [git_commit]
 style = "bg:yellow fg:crust"
@@ -63,16 +63,13 @@ style = "bg:peach fg:crust"
 read_only = " 󰌾"
 format = "[  $path$read_only ]($style)"
 disabled = false
-fish_style_pwd_dir_length = 1
+fish_style_pwd_dir_length = 2
 truncation_length = 2
 
 [cmd_duration]
 show_milliseconds = true
-format = " in $duration "
-style = "bg:lavender"
+format = " $duration "
 disabled = false
-show_notifications = true
-min_time_to_notify = 45000
 
 [os]
 disabled = false
@@ -131,18 +128,15 @@ format = "[[  $time](fg:crust bg:lavender)]($style)"
 
 [username]
 disabled = false
-style_root = "bold bg:sapphire"
-style_user = "bg:sapphire"
-format = """
-[  $user ]($style fg:crust)\
-"""
+style_root = "bold fg:crust bg:blue"
+style_user = "fg:crust bg:blue"
+format = "[  $user ]($style)"
 
 [hostname]
 ssh_symbol = "󰒋 "
 disabled = false
-format = """
-[$ssh_symbol](bg:sapphire fg:crust)[$hostname ](bg:sapphire fg:crust)\
-"""
+style = "fg:crust bg:blue"
+format = "[$ssh_symbol$hostname ]($style)"
 
 [line_break]
 disabled = false
