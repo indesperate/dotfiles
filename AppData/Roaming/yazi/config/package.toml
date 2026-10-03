@@ -1,9 +1,0 @@
-[[plugin.deps]]
-use = "yazi-rs/plugins:git"
-rev = "044c3cc"
-hash = "d52f26f271ec4f77b0da0aa749330ca"
-
-[[flavor.deps]]
-use = "yazi-rs/flavors:catppuccin-mocha"
-rev = "20b47bf"
-hash = "80d8146e90f2f6b0883d3682325f27c0"
