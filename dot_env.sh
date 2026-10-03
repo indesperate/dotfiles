@@ -9,6 +9,7 @@ append_path() {
 
 append_path "$HOME/bin"
 append_path "$HOME/.local/bin"
+append_path "$HOME/.bun/bin/"
 
 unset append_path
 
