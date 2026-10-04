@@ -75,23 +75,13 @@ function gdt() {
     tmux kill-pane -t "$id"
 }
 
-function br {
-    local cmd cmd_file
-    cmd_file=$(mktemp)
-    if broot --outcmd "$cmd_file" "$@"; then
-        cmd=$(<"$cmd_file")
-        eval "$cmd"
-    fi
-    command rm -f "$cmd_file"
-}
-
 function y() {
     local tmp cwd
-    tmp=$(mktemp -t "yazi-cwd.XXXXXX")
-    yazi "$@" --cwd-file="$tmp"
+    tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+    command yazi "$@" --cwd-file="$tmp"
     IFS= read -r -d '' cwd <"$tmp"
-    [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-    rm -f -- "$tmp"
+    [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd" || builtin true
+    command rm -f -- "$tmp"
 }
 
 function set_proxy() {
