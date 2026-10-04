@@ -18,9 +18,11 @@ export PATH
 # Shared Catppuccin palette with terminal-default backgrounds.
 export FZF_DEFAULT_OPTS_FILE="$HOME/.config/fzfrc"
 
-if [ "$(command -v nvim)" ]; then
+if command -v nvim >/dev/null 2>&1; then
     export EDITOR=nvim
     export MANPAGER='nvim +Man!'
 fi
 
-export GOPATH=$HOME/.go
+if command -v go >/dev/null 2>&1; then
+    export GOPATH="$HOME/.go"
+fi

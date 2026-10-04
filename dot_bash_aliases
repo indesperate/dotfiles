@@ -1,4 +1,4 @@
-if [ "$(command -v nvim)" ]; then
+if command -v nvim >/dev/null 2>&1; then
     alias vi='nvim --clean'
     alias vim=nvim
     alias vo='nvim +Oil'
@@ -15,34 +15,34 @@ if [ "$(command -v nvim)" ]; then
     }
 fi
 
-if [ "$(command -v helix)" ]; then
+if command -v helix >/dev/null 2>&1; then
     alias hx='helix'
 fi
 
-if [ "$(command -v just)" ]; then
+if command -v just >/dev/null 2>&1; then
     alias j='just'
 fi
 
-if [ "$(command -v chezmoi)" ]; then
+if command -v chezmoi >/dev/null 2>&1; then
     alias che='chezmoi'
 fi
 
-if [ "$(command -v zellij)" ]; then
+if command -v zellij >/dev/null 2>&1; then
     alias zj='zellij'
 fi
 
-if [ "$(command -v eza)" ]; then
+if command -v eza >/dev/null 2>&1; then
     alias ls='eza --icons=auto'
     alias ll='eza -al --icons=auto'
     alias la='eza -a --icons=auto'
     alias l='eza -l --icons=auto'
 fi
 
-if [ "$(command -v bat)" ]; then
+if command -v bat >/dev/null 2>&1; then
     alias cat='bat'
 fi
 
-if [ "$(command -v errno)" ]; then
+if command -v errno >/dev/null 2>&1; then
     alias perr='errno $?'
 fi
 

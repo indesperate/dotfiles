@@ -31,7 +31,7 @@
 
 input=$( cat "$@" )
 input() { printf %s "$input" ;}
-known() { command -v "$1" >/dev/null ;}
+known() { command -v "$1" >/dev/null 2>&1 ;}
 maybe() { known "$1" && input | "$@" ;}
 alive() { known "$1" && "$@" >/dev/null 2>&1 ;}
 
