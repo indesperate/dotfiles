@@ -9,6 +9,7 @@ README.md
 .vimrc
 .local/bin/yank
 .config/*
+!.config/fzfrc
 !.config/starship.toml
 {{- end }}
 

@@ -21,6 +21,7 @@ def --env y [...args] {
 
 # env
 $env.EDITOR = "nvim"
+$env.FZF_DEFAULT_OPTS_FILE = ($nu.home-dir | path join ".config" "fzfrc")
 
 # config
 $env.config.history = {
