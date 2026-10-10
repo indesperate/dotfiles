@@ -1,18 +1,6 @@
 if command -v nvim >/dev/null 2>&1; then
     alias vi='nvim --clean'
     alias vim=nvim
-    alias vo='nvim +Oil'
-    function vs() {
-        local target="$1"
-        local path="$2"
-        if [ -z "$target" ]; then
-            target=remote
-        fi
-        if [ -z "$path" ]; then
-            path=/
-        fi
-        nvim "oil-ssh://$target/$path"
-    }
 fi
 
 if command -v helix >/dev/null 2>&1; then
