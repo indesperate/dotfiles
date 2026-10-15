@@ -1,10 +1,19 @@
 onboarding = false
 
+{{ if eq .chezmoi.os "windows" -}}
+[terminal]
+default_shell = "nu"
+
+{{ end -}}
 # Use the terminal background; keep the default Catppuccin colors.
 [theme.custom]
 panel_bg = "reset"
 
 [ui]
+{{- if eq .chezmoi.os "windows" }}
+# Preserve Nushell's vi-mode cursor shapes with the native terminal cursor.
+host_cursor = "native"
+{{- end }}
 tab_bar_right = [
   { type = "hostname" },
   { type = "datetime", format = "󰃰 %Y-%m-%d %H:%M" },
