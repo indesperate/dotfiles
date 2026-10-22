@@ -5,6 +5,9 @@ theme = Catppuccin Mocha
 background-opacity = 0.8
 background = #000000
 
+# Let Readline manage the cursor shape for vi mode.
+shell-integration-features = no-cursor
+
 keybind = F11=toggle_fullscreen
 
 keybind = ctrl+b>c=new_tab
