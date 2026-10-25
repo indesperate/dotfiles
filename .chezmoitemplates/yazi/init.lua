@@ -3,6 +3,8 @@ require("git"):setup({
 	order = 1500,
 })
 
+require("git-search"):setup()
+
 require("session"):setup({
 	sync_yanked = true,
 })

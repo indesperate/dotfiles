@@ -7,10 +7,10 @@ edit = [
 
 [[plugin.prepend_fetchers]]
 url = "*"
-run = "git"
+run = "git-search"
 group = "git"
 
 [[plugin.prepend_fetchers]]
 url = "*/"
-run = "git"
+run = "git-search"
 group = "git"
