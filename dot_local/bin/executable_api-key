@@ -1,0 +1,106 @@
+#!/usr/bin/env bash
+set +x
+set -euo pipefail
+umask 077
+
+if [[ $# -gt 1 || ${1:-} == -h || ${1:-} == --help ]]; then
+    printf 'Usage: api-key [ENV_NAME]\nChoose a variable, then enter its key at the masked prompt.\n'
+    if [[ $# -gt 1 ]]; then exit 2; fi
+    exit 0
+fi
+
+file=$HOME/.config/secrets/env.sh
+exec 3<>/dev/tty
+trap 'exit 130' INT
+trap 'exit 143' TERM
+
+while :; do
+    name=${1:-}
+    if [[ -z $name ]]; then
+        choice=$(gum filter --limit=1 --height=15 --header='Choose an API-key variable' \
+            --placeholder='Search provider or variable...' <<'PROVIDERS'
+DEEPSEEK_API_KEY	DeepSeek
+ANTHROPIC_API_KEY	Anthropic
+OPENAI_API_KEY	OpenAI
+GEMINI_API_KEY	Google Gemini (Pi and OpenCode)
+GOOGLE_GENERATIVE_AI_API_KEY	Google Gemini (OpenCode alternative)
+OPENROUTER_API_KEY	OpenRouter
+OPENCODE_API_KEY	OpenCode Zen / Go
+AI_GATEWAY_API_KEY	Vercel AI Gateway (Pi)
+GROQ_API_KEY	Groq
+MISTRAL_API_KEY	Mistral
+CEREBRAS_API_KEY	Cerebras
+XAI_API_KEY	xAI / Grok
+NVIDIA_API_KEY	NVIDIA NIM
+ZAI_API_KEY	Z.AI
+ZAI_CODING_CN_API_KEY	Z.AI coding plan (China, Pi)
+MOONSHOT_API_KEY	Moonshot AI / Kimi
+KIMI_API_KEY	Kimi for Coding
+MINIMAX_API_KEY	MiniMax
+MINIMAX_CN_API_KEY	MiniMax (China, Pi)
+HF_TOKEN	Hugging Face
+FIREWORKS_API_KEY	Fireworks AI
+TOGETHER_API_KEY	Together AI (Pi)
+BASETEN_API_KEY	Baseten
+AZURE_OPENAI_API_KEY	Azure OpenAI
+CLOUDFLARE_API_KEY	Cloudflare Workers AI
+AWS_BEARER_TOKEN_BEDROCK	Amazon Bedrock bearer token
+COPILOT_GITHUB_TOKEN	GitHub Copilot (Pi)
+__CUSTOM__	Other: enter an environment variable name
+PROVIDERS
+        )
+        name=${choice%%$'\t'*}
+        if [[ $name == __CUSTOM__ ]]; then
+            name=$(gum input --prompt='Variable > ' --placeholder='MY_API_KEY' <&3)
+        fi
+    fi
+    if [[ ! $name =~ ^[a-zA-Z_][a-zA-Z0-9_]*$ ]]; then
+        printf 'Invalid environment variable name.\n' >&2
+        exit 1
+    fi
+
+    secret=$(gum input --password --char-limit=0 --prompt="$name > " \
+        --placeholder='Paste secret (masked)' <&3)
+    secret=${secret#"${secret%%[![:space:]]*}"}
+    secret=${secret%"${secret##*[![:space:]]}"}
+    if [[ -z $secret || $secret == *$'\r'* || $secret == *$'\n'* ]]; then
+        printf 'A nonempty, single-line key is required; nothing saved.\n' >&2
+        exit 1
+    fi
+
+    directory=${file%/*}
+    if [[ -L $directory || -L $file || -L $directory/.env.sh.lock ]]; then
+        printf 'The secrets directory and files must not be symlinks.\n' >&2
+        exit 1
+    fi
+    mkdir -p -- "$directory"
+    chmod 700 -- "$directory"
+    exec 9>"$directory/.env.sh.lock"
+    flock -x 9
+    temporary=$(mktemp "$directory/.env.sh.XXXXXX")
+    trap 'rm -f -- "$temporary"' EXIT
+
+    # env.sh contains simple one-line assignments. Keep other entries, then
+    # append one safely quoted export in place of all assignments for this name.
+    pattern="^[[:space:]]*(export[[:space:]]+)?${name}="
+    {
+        if [[ -f $file ]]; then
+            while IFS= read -r line || [[ -n $line ]]; do
+                if [[ ! $line =~ $pattern ]]; then
+                    printf '%s\n' "$line"
+                fi
+            done < "$file"
+        fi
+        printf "export %s='%s'\n" "$name" "${secret//\'/\'\\\'\'}"
+    } > "$temporary"
+    unset secret
+    mv -f -- "$temporary" "$file"
+    exec 9>&-
+    printf 'Saved %s.\n' "$name"
+
+    if [[ $# == 1 ]] || ! gum confirm 'Save another API key?' <&3; then
+        break
+    fi
+done
+# shellcheck disable=SC2016
+printf 'Load changes: . "$HOME/.config/secrets/env.sh"\n'

@@ -15,6 +15,11 @@ unset append_path
 
 export PATH
 
+# Machine-local secrets stay outside the chezmoi source repository.
+if [ -f "$HOME/.config/secrets/env.sh" ]; then
+    . "$HOME/.config/secrets/env.sh"
+fi
+
 # Shared Catppuccin palette with terminal-default backgrounds.
 export FZF_DEFAULT_OPTS_FILE="$HOME/.config/fzfrc"
 

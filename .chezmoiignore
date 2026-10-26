@@ -8,6 +8,7 @@ README.md
 .inputrc
 .vimrc
 .local/bin/yank
+.local/bin/api-key
 .config/*
 !.config/fzfrc
 !.config/starship.toml
