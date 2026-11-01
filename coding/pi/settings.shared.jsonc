@@ -21,6 +21,14 @@
   ],
   "tidy": {
     "userMessageStyle": "rail",
-    "groupTools": false
+    "userMessagePaddingY": 0,
+    "userMessageColors": {
+      "rail": "#f5c2e7",
+      "rule": "#f5c2e7"
+    },
+    "groupTools": false,
+    "backgroundJobs": false,
+    "collapseTurns": "afterRun",
+    "frameFinalReply": false
   }
 }
