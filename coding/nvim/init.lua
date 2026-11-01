@@ -1,0 +1,6 @@
+require("vim._core.ui2").enable()
+require("config.lazy")
+vim.cmd.colorscheme("catppuccin-nvim")
+require("config.lsp")
+require("config.map")
+require("config.autocmd")

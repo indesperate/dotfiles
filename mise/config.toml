@@ -1,0 +1,105 @@
+# Groups deploy only explicit entries, not the repository's other files.
+[dotfile_groups.common]
+root = "."  # Resolve entry sources from the repository root.
+mode = "copy"  # Inherited by entries; groups otherwise default to symlink-each.
+exclude = ["/*"]  # Disable the automatic tree walk; deploy only explicit entries.
+
+[dotfile_groups.common.entries]
+# Bash
+"~/.bash_aliases" = { source = "shells/bash/dot-bash_aliases", variants = [{ os = "linux" }] }
+"~/.bash_tools.sh" = { source = "shells/bash/dot-bash_tools.sh", variants = [{ os = "linux" }] }
+"~/.bashrc" = { source = "shells/bash/dot-bashrc", variants = [{ os = "linux" }] }
+"~/.env.sh" = { source = "shells/bash/dot-env.sh", variants = [{ os = "linux" }] }
+"~/.inputrc" = { source = "shells/bash/dot-inputrc", variants = [{ os = "linux" }] }
+
+# Fish
+"~/.config/fish" = { source = "shells/fish", variants = [{ os = "linux" }] }
+
+# Alacritty
+"~/.config/alacritty" = { source = "terminals/alacritty", variants = [{ os = "linux" }] }
+
+# bat
+"~/.config/bat" = { source = "cli/bat", variants = [{ os = "linux" }, { os = "windows", target = "~/AppData/Roaming/bat" }] }
+
+# fzf
+"~/.config/fzfrc" = { source = "cli/fzf/fzfrc" }
+
+# GDB
+"~/.config/gdbinit" = { source = "cli/gdb/gdbinit", variants = [{ os = "linux" }] }
+
+# Ghostty
+"~/.config/ghostty" = { source = "terminals/ghostty", variants = [{ os = "linux" }] }
+
+# Git
+"~/.gitconfig" = { source = "cli/git/gitconfig.tera", mode = "template" }
+"~/.config/delta/catppuccin.gitconfig" = { source = "cli/git/catppuccin.gitconfig" }
+
+# GitUI
+"~/.config/gitui" = { source = "cli/gitui", variants = [{ os = "linux" }, { os = "windows", target = "~/AppData/Roaming/gitui" }] }
+
+# Herdr
+"~/.config/herdr/config.toml" = { source = "terminals/herdr/config.toml.tera", mode = "template", variants = [{ os = "linux" }, { os = "windows", target = "~/AppData/Roaming/herdr/config.toml" }] }
+
+# Lazygit
+"~/.config/lazygit/config.yml" = { source = "cli/lazygit/config.yml", variants = [{ os = "linux" }, { os = "windows", target = "~/AppData/Roaming/lazygit/config.yml" }] }
+
+# mpv
+"~/.config/mpv" = { source = "apps/mpv", variants = [{ os = "linux" }] }
+
+# Nushell
+"~/.config/nushell/config.nu" = { source = "shells/nushell/config.nu.tera", mode = "template", variants = [{ os = "linux" }, { os = "windows", target = "~/AppData/Roaming/nushell/config.nu" }] }
+
+# paru
+"~/.config/paru" = { source = "cli/paru", variants = [{ os = "linux" }] }
+
+# Starship
+"~/.config/starship.toml" = { source = "shells/starship/starship.toml" }
+
+# tmux
+"~/.config/tmux" = { source = "terminals/tmux", exclude = ["setup-tpm.sh"], variants = [{ os = "linux" }] }
+
+# tuicr
+"~/.config/tuicr" = { source = "cli/tuicr", variants = [{ os = "linux" }, { os = "windows", target = "~/AppData/Roaming/tuicr" }] }
+
+# VS Code
+"~/.config/Code/User/settings.json" = { source = "apps/vscode/settings.json.tera", mode = "template", variants = [{ os = "linux" }, { os = "windows", target = "~/AppData/Roaming/Code/User/settings.json" }] }
+"~/.config/Code/User/keybindings.json" = { source = "apps/vscode/keybindings.jsonc", variants = [{ os = "linux" }, { os = "windows", target = "~/AppData/Roaming/Code/User/keybindings.json" }] }
+
+# Yazi
+"~/.config/yazi" = { source = "cli/yazi", variants = [{ os = "linux" }, { os = "windows", target = "~/AppData/Roaming/yazi/config" }] }
+
+# Zed
+"~/.config/zed/settings.json" = { source = "apps/zed/settings.jsonc", variants = [{ os = "linux" }, { os = "windows", target = "~/AppData/Roaming/zed/settings.json" }] }
+"~/.config/zed/keymap.json" = { source = "apps/zed/keymap.jsonc", variants = [{ os = "linux" }, { os = "windows", target = "~/AppData/Roaming/zed/keymap.json" }] }
+
+# Zellij
+"~/.config/zellij" = { source = "terminals/zellij", variants = [{ os = "linux" }, { os = "windows", target = "~/AppData/Roaming/Zellij/config" }] }
+
+# SSH
+"~/.ssh" = { permissions = "0700" }
+"~/.ssh/config" = { source = "cli/ssh/config.tera", mode = "template", permissions = "0600" }
+
+# Vim
+"~/.vimrc" = { source = "cli/vim/vimrc", variants = [{ os = "linux" }] }
+
+# api-key
+"~/.local/bin/api-key" = { source = "scripts/api-key", permissions = "0755", variants = [{ os = "linux" }] }
+
+# yank
+"~/.local/bin/yank" = { source = "scripts/yank", permissions = "0755", variants = [{ os = "linux" }] }
+
+[dotfile_groups.nvim]
+root = "."
+mode = "copy"
+exclude = ["/*"]
+
+[dotfile_groups.nvim.entries]
+"~/.config/nvim" = { source = "coding/nvim", variants = [{ os = "linux" }, { os = "windows", target = "~/AppData/Local/nvim" }] }
+
+[dotfile_groups.pi]
+root = "."
+mode = "copy"
+exclude = ["/*"]
+
+[dotfile_groups.pi.entries]
+"~/.pi/agent" = { source = "coding/pi", variants = [{ os = "linux" }] }

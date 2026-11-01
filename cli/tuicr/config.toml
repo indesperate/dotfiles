@@ -1,0 +1,8 @@
+# Match the Catppuccin Mocha theme used by the other dotfiles.
+theme = "catppuccin-mocha"
+transparent_background = true
+diff_view = "side-by-side"
+compact_folders = true
+comment_vim = true
+q_quits = true
+leader = " "

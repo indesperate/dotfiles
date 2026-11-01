@@ -1,0 +1,52 @@
+{
+  "$schema": "https://raw.githubusercontent.com/gotgenes/pi-packages/main/packages/pi-permission-system/schemas/permissions.schema.json",
+  "permission": {
+    "*": "allow",
+    "bash": {
+      "*": "allow",
+      "ssh *": "ask",
+      "rm *": "ask",
+      "rmdir *": "ask",
+      "git clean *": "ask",
+      "git rm *": "ask",
+      "git reset --hard*": "ask",
+      "git checkout -- *": "ask",
+      "git restore *": "ask",
+      "docker rm *": "ask",
+      "docker rmi *": "ask",
+      "docker *prune*": "ask",
+      "sudo *": "ask",
+      "mv *": "ask",
+      "rm -rf /": "deny",
+      "rm -fr /": "deny",
+      "rm -rf ~": "deny",
+      "rm -fr ~": "deny",
+      "rm -rf $HOME": "deny",
+      "rm -rf ${HOME}": "deny",
+      "--no-preserve-root": "deny",
+      "dd *of=/dev/*": "deny",
+      "mkfs*": "deny",
+      ":(){ :|:& };:": "deny",
+      "chmod 777 /*": "deny",
+      "chmod -R 777 *": "deny",
+      "curl * | sh*": "ask",
+      "curl * | bash*": "ask",
+      "curl * | sudo *": "ask",
+      "wget * | sh*": "ask",
+      "wget * | bash*": "ask",
+      "wget * | sudo *": "ask"
+    },
+    "path": {
+      "*": "allow",
+      "id_rsa*": "deny",
+      "id_ed25519*": "deny"
+    },
+    "external_directory_read": "allow",
+    "external_directory_write": {
+      "*": "ask",
+      "/tmp/*": "allow"
+    },
+    "mcp": "allow",
+    "skill": "allow"
+  }
+}

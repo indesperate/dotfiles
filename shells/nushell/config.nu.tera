@@ -1,0 +1,55 @@
+# alias
+
+alias vim = nvim
+alias vi = nvim --clean
+alias g = git
+alias lg = lazygit
+alias md = mise dot
+alias j = just
+alias zj = zellij
+alias cr = tuicr
+
+def --env y [...args] {
+    let tmp = (mktemp -t "yazi-cwd.XXXXXX")
+    yazi ...$args --cwd-file $tmp
+    let cwd = (open $tmp)
+    if $cwd != "" and $cwd != $env.PWD {
+        cd $cwd
+    }
+    rm -fp $tmp
+}
+
+# env
+$env.EDITOR = "nvim"
+$env.FZF_DEFAULT_OPTS_FILE = ($nu.home-dir | path join ".config" "fzfrc")
+
+# config
+$env.config.history = {
+    file_format: sqlite
+    max_size: 10_000_000
+    sync_on_enter: true
+    isolation: false
+}
+
+$env.config.show_banner = false
+
+$env.config.buffer_editor = "nvim"
+
+$env.config.edit_mode = 'vi'
+$env.PROMPT_INDICATOR_VI_NORMAL = ""
+$env.PROMPT_INDICATOR_VI_INSERT = ""
+$env.config.cursor_shape.vi_insert = "line"
+$env.config.cursor_shape.vi_normal = "block"
+
+# starship config, zoxide configure after starship
+mkdir ($nu.data-dir | path join "vendor/autoload")
+^starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+^zoxide init nushell | save -f ($nu.data-dir | path join "vendor/autoload/zoxide.nu")
+
+# modules
+use std/clip copy52
+{% if os() == "windows" -%}
+$env.YAZI_FILE_ONE = "{{ env.USERPROFILE | replace(from="\\", to="/") }}/scoop/apps/git/current/usr/bin/file.exe"
+$env.SHELL = "nu"
+chcp 65001 | null
+{% endif -%}

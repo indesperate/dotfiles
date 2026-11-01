@@ -1,0 +1,33 @@
+[user]
+    # json_encode quotes and escapes identity values for Git config.
+    name = {{ vars.git_name | json_encode }}
+    email = {{ vars.git_email | json_encode }}
+[core]
+    editor = nvim
+    pager = delta
+    fsmonitor = true
+    untrackedcache = true
+{%- if os() == "windows" %}
+    autocrlf = true
+{%- endif %}
+[include]
+    path = ~/.config/delta/catppuccin.gitconfig
+[delta]
+    features = catppuccin-mocha
+    navigate = true
+    side-by-side = true
+[interactive]
+    diffFilter = delta --color-only
+[merge]
+    conflictStyle = zdiff3
+    tool = code
+[mergetool "code"]
+    cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+[credential "https://github.com"]
+    helper =
+    helper = !gh auth git-credential
+[credential "https://gist.github.com"]
+    helper =
+    helper = !gh auth git-credential
+[init]
+    defaultBranch = main

@@ -1,0 +1,111 @@
+# Pi-native adaptation of ~/.config/starship.toml (Catppuccin Mocha).
+# Keep the shell's colors and separators; show Pi session data.
+# Check glyph overhang in RecMonoDuotone and Maple Mono when changing icons.
+format = "[](maroon)$model$thinking[](fg:maroon bg:yellow)$directory[](fg:yellow bg:green)$git_metrics[](fg:green bg:lavender)$time[ ](fg:lavender)$activity\n$extension_status$fill$tokens$cache$cost$context"
+palette = "catppuccin_mocha"
+
+[model]
+format = "[ $model]($style)"
+symbol = ""
+style = "fg:crust bg:maroon"
+
+[directory]
+format = "[ $symbol $path$read_only ]($style)"
+symbol = "󰉖"
+style = "fg:crust bg:yellow"
+read_only = " 󰍁"
+fish_style_pwd_dir_length = 2
+truncation_length = 2
+
+[git_metrics]
+format = "[  $added]($added_style)[  $deleted ]($deleted_style)"
+added_style = "fg:crust bg:green"
+deleted_style = "fg:crust bg:green"
+disabled = false
+only_nonzero_diffs = false
+
+[tokens]
+format = "[ $symbol $total ]($style)"
+symbol = "󰓢"
+style = "fg:subtext1"
+
+[cache]
+format = "[$symbol $rate ]($style)"
+symbol = "󱘿"
+style = "fg:subtext1"
+disabled = false
+
+[cost]
+format = '[$symbol \$$cost ]($style)'
+symbol = ""
+
+[[cost.display]]
+threshold = 0
+style = "fg:subtext1"
+hidden = false
+
+# Match the shell's unboxed cmd_duration treatment after the time segment.
+[activity]
+format = "[$text ]($style)"
+symbol = ""
+style = "fg:text"
+
+[thinking]
+format = "[$symbol $level ]($style)"
+symbol = "✦"
+style = "fg:crust bg:maroon"
+
+[context]
+format = "[$symbol $percentage ]($style)"
+symbol = "󰓅"
+
+[[context.display]]
+threshold = 0
+style = "fg:subtext1"
+hidden = false
+
+[[context.display]]
+threshold = 60
+style = "fg:peach"
+hidden = false
+
+[[context.display]]
+threshold = 80
+style = "fg:red"
+hidden = false
+
+[time]
+format = "[ 󰅐 $time ]($style)"
+symbol = ""
+style = "fg:crust bg:lavender"
+time_format = "%R"
+
+# Keep extension statuses left and usage right on the second row.
+[fill]
+symbol = " "
+style = "none"
+
+# Show statuses from other extensions at the left of the second row.
+[extension_status]
+format = "([$statuses]($style))"
+style = "fg:subtext0"
+separator = " • "
+icons = { "usage" = "󰊚", fallback = "󰚥" }
+
+[palettes.catppuccin_mocha]
+pink = "#f5c2e7"
+rosewater = "#f5e0dc"
+mauve = "#cba6f7"
+teal = "#94e2d5"
+maroon = "#eba0ac"
+blue = "#89b4fa"
+subtext0 = "#a6adc8"
+subtext1 = "#bac2de"
+text = "#cdd6f4"
+red = "#f38ba8"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+sapphire = "#74c7ec"
+lavender = "#b4befe"
+crust = "#11111b"

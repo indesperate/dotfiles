@@ -1,0 +1,3 @@
+#!/bin/sh
+# Quote paths here: quotes embedded in $EDITOR would be treated literally.
+exec "$YAZI_NVIM" -l "$YAZI_NVIM_BRIDGE" "$@"
