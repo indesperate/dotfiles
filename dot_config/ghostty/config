@@ -15,6 +15,19 @@ keybind = ctrl+b>n=next_tab
 keybind = ctrl+b>p=previous_tab
 
 keybind = ctrl+b>-=new_split:down
-keybind = ctrl+b>\=new_split:right
+keybind = ctrl+b>shift+\=new_split:right
 
 keybind = ctrl+v=paste_from_clipboard
+
+keybind = ctrl+shift+f=unbind
+keybind = ctrl+b>/=start_search
+
+keybind = ctrl+b>h=goto_split:left
+keybind = ctrl+b>j=goto_split:down
+keybind = ctrl+b>k=goto_split:up
+keybind = ctrl+b>l=goto_split:right
+keybind = ctrl+b>z=toggle_split_zoom
+keybind = ctrl+b>x=close_surface
+keybind = ctrl+b>shift+x=close_tab:this
+keybind = ctrl+b>r=prompt_tab_title
+keybind = ctrl+b>ctrl+b=text:\x02
