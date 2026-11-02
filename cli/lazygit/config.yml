@@ -1,6 +1,9 @@
 # Catppuccin Mocha (blue): https://github.com/catppuccin/lazygit
 # Lazygit inherits the background color from the terminal.
 gui:
+  screenMode: half
+  showCommandLog: false
+  nerdFontsVersion: "3"
   theme:
     activeBorderColor:
       - '#89b4fa'

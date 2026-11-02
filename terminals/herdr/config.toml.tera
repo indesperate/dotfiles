@@ -25,7 +25,6 @@ tab_bar_right_separator = " · "
 [keys]
 prefix = "ctrl+a"
 detach = "prefix+d"
-reload_config = "prefix+ctrl+shift+r"
 
 # Herdr tabs correspond to tmux windows; workspaces group tabs.
 rename_tab = "prefix+r"
@@ -37,8 +36,6 @@ focus_pane_left = "ctrl+h"
 focus_pane_down = "ctrl+j"
 focus_pane_up = "ctrl+k"
 focus_pane_right = "ctrl+l"
-cycle_pane_next = "prefix+o"
-last_pane = "prefix+semicolon"
 split_vertical = "prefix+|"
 resize_mode = "prefix+ctrl+r"
 toggle_sidebar = "prefix+ctrl+s"

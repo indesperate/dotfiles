@@ -15,7 +15,10 @@
 [delta]
     features = catppuccin-mocha
     navigate = true
-    side-by-side = true
+    file-added-label = " "
+    file-modified-label = " "
+    file-removed-label = " "
+    file-renamed-label = "󰄾 "
 [interactive]
     diffFilter = delta --color-only
 [merge]
