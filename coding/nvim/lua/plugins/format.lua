@@ -5,6 +5,7 @@ return {
     opts = {
         formatters_by_ft = {
             lua = { "stylua" },
+            zig = { "zigfmt" },
             c = { "clang-format" },
             cpp = { "clang-format" },
             sh = { "shfmt" },

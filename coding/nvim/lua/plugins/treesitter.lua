@@ -28,6 +28,7 @@ return {
                 "vim",
                 "vimdoc",
                 "yaml",
+                "zig",
             }
 
             treesitter.install(should_install)

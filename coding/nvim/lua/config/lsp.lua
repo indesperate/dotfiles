@@ -14,6 +14,7 @@ vim.lsp.enable({
     "ruff",
     "nushell",
     "hls",
+    "zls",
 })
 vim.lsp.codelens.enable()
 vim.lsp.inlay_hint.enable()

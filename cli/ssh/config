@@ -1,0 +1,8 @@
+# Keep host definitions outside Git; local options take precedence over defaults.
+Include ~/.ssh/config.local
+
+Host *
+    TCPKeepAlive yes
+    ServerAliveInterval 15
+    ServerAliveCountMax 6
+    Compression yes

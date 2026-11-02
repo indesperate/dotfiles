@@ -16,8 +16,6 @@ Set machine-local values in `~/.config/mise/config.local.toml` (Git-ignored):
 [vars]
 git_name = "Your Name"
 git_email = "you@example.com"
-ssh_hostname = "your-server"
-ssh_user = "your-user"
 ```
 
 ## Groups
