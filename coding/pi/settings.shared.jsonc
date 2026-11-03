@@ -1,11 +1,15 @@
 {
   "theme": "catppuccin",
+  "showHardwareCursor": true,
+  // Avoid Pi's tree action conflicting with pi-vim-navigate's double Esc.
+  "doubleEscapeAction": "none",
+  "vimEditor": {
+    "cursorShape": true
+  },
   "defaultTools": ["+grep", "+find", "+ls", "+tool_search", "+codemode"],
   "packages": [
     // Web search and URL fetching.
     "npm:pi-web-access",
-    // Vim-style editing in Pi's input editor.
-    "npm:pi-vim",
     // Native Starship-style footer, configured through /starship.
     "npm:@narumitw/pi-starship",
     // Language learning with writing feedback and bilingual translations.
@@ -17,7 +21,11 @@
     // Tokens-per-second meter, shown by pi-starship's extension status.
     "npm:pi-token-speed",
     // Transparent tool and user-message frames.
-    "npm:pi-tidy"
+    "npm:pi-tidy",
+    // Vim-style editing; load after extensions that customize the editor.
+    "npm:pi-vim-editor",
+    // Transcript navigation via /navigate; load after pi-vim-editor.
+    "npm:pi-vim-navigate"
   ],
   "tidy": {
     "userMessageStyle": "rail",
