@@ -103,4 +103,6 @@ mode = "copy"
 exclude = ["/*"]
 
 [dotfile_groups.pi.entries]
-"~/.pi/agent" = { source = "coding/pi", variants = [{ os = "linux" }] }
+"~/.pi/agent" = { source = "coding/pi", exclude = ["settings.shared.jsonc.tera"] }
+# Own shared keys only; preserve machine-local settings.
+"~/.pi/agent/settings.json/shared" = { source = "coding/pi/settings.shared.jsonc.tera", template = "tera", merge = true, format = "jsonc", permissions = "0600" }

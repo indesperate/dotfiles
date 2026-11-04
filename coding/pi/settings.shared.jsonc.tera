@@ -4,7 +4,17 @@
   "vimEditor": {
     "cursorShape": true
   },
-  "defaultTools": ["+grep", "+find", "+ls", "+tool_search", "+codemode"],
+  "defaultTools": [
+    "+grep",
+    "+find",
+    "+ls",
+    "+tool_search",
+    "+codemode",
+{% if os() == "windows" %}
+    "-bash",
+    "+powershell",
+{% endif %}
+  ],
   "packages": [
     // Web search and URL fetching.
     "npm:pi-web-access",
