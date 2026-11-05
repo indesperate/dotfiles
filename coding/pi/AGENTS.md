@@ -1,5 +1,4 @@
-# Code style
-
 - Use clear names and self-explanatory code.
 - Write comments that explain what the code cannot.
+- Do not leak conversation, prompt, or iteration history into code comments, pull request descriptions, or other maintainer-facing prose.
 - Extract small functions when they improve clarity.
