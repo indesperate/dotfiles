@@ -3,6 +3,7 @@ local map = vim.keymap.set
 -- useful map
 map("n", "H", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
 map("n", "L", "<cmd>bnext<cr>", { desc = "Next buffer" })
+map("n", "gb", "<cmd>BufferLinePick<cr>", { desc = "Pick buffer", silent = true })
 
 -- lsp map
 map("n", "<leader>r", vim.lsp.buf.rename, { desc = "Lsp rename", silent = true })

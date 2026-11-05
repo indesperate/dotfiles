@@ -39,23 +39,20 @@ return {
             picker = { enabled = true },
             quickfile = { enabled = true },
         },
-        config = function(_, opts)
-            require("snacks").setup(opts)
-            vim.api.nvim_create_user_command("Scratch", function()
-                Snacks.scratch()
-            end, { desc = "Toggle scratchpad", force = false })
-            vim.api.nvim_create_user_command("ScratchSelect", function()
-                Snacks.scratch.select()
-            end, { desc = "Select scratchpad", force = false })
-            vim.api.nvim_create_user_command("Bd", function(args)
-                Snacks.bufdelete({ force = args.bang })
-            end, { desc = "Delete buffer (keep layout)", bang = true, force = false })
-            vim.api.nvim_create_user_command("Bda", function(args)
-                Snacks.bufdelete.all({ force = args.bang })
-            end, { desc = "Delete all buffers (keep layout)", bang = true, force = false })
-            vim.api.nvim_create_user_command("Bdo", function(args)
-                Snacks.bufdelete.other({ force = args.bang })
-            end, { desc = "Delete other buffers (keep layout)", bang = true, force = false })
+    },
+    {
+        "akinsho/bufferline.nvim",
+        version = "*",
+        lazy = false,
+        dependencies = { "catppuccin", "nvim-tree/nvim-web-devicons" },
+        opts = function()
+            return {
+                highlights = require("catppuccin.special.bufferline").get_theme(),
+                options = {
+                    mode = "buffers",
+                    diagnostics = "nvim_lsp",
+                },
+            }
         end,
     },
     -- under status line
@@ -69,7 +66,7 @@ return {
             sections = {
                 lualine_a = { "mode" },
                 lualine_b = { "diff", "diagnostics" },
-                lualine_c = { "filename", "%S" },
+                lualine_c = { "%S" },
                 lualine_x = { "selectioncount", "searchcount", "lsp_status", "filetype" },
                 lualine_y = { "progress" },
                 lualine_z = { "branch" },
