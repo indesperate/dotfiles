@@ -41,6 +41,6 @@
     "groupTools": false,
     "backgroundJobs": false,
     "collapseTurns": "afterRun",
-    "frameFinalReply": false
+    "finalReplyStyle": "off"
   }
 }
