@@ -24,8 +24,6 @@
     "npm:pi-language-tutor",
     // Provider usage, limits, balances, and Codex Fast mode.
     "npm:@narumitw/pi-usage",
-    // Tokens-per-second meter, shown by pi-starship's extension status.
-    "npm:pi-token-speed",
     // Transparent tool and user-message frames.
     "npm:pi-tidy",
     // Vim-style editing; load after extensions that customize the editor.
@@ -40,6 +38,7 @@
     },
     "groupTools": false,
     "backgroundJobs": false,
+    "codeBlocks": false,
     "collapseTurns": "afterRun",
     "finalReplyStyle": "off"
   }
