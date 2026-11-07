@@ -9,24 +9,22 @@
     "+find",
     "+ls",
     "+tool_search",
-    "+codemode",
-{% if os() == "windows" %}
+    "+codemode"{% if os() == "windows" %},
     "-bash",
-    "+powershell",
-{% endif %}
+    "+powershell"{% endif %}
   ],
   "packages": [
-    // Web search and URL fetching.
+    {# Web search and URL fetching. #}
     "npm:pi-web-access",
-    // Native Starship-style footer, configured through /starship.
+    {# Native Starship-style footer, configured through /starship. #}
     "npm:@narumitw/pi-starship",
-    // Language learning with writing feedback and bilingual translations.
+    {# Language learning with writing feedback and bilingual translations. #}
     "npm:pi-language-tutor",
-    // Provider usage, limits, balances, and Codex Fast mode.
+    {# Provider usage, limits, balances, and Codex Fast mode. #}
     "npm:@narumitw/pi-usage",
-    // Transparent tool and user-message frames.
+    {# Transparent tool and user-message frames. #}
     "npm:pi-tidy",
-    // Vim-style editing; load after extensions that customize the editor.
+    {# Vim-style editing; load after extensions that customize the editor. #}
     "npm:pi-vim-editor"
   ],
   "tidy": {
