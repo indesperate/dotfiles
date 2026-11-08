@@ -19,6 +19,7 @@ $git_status\
 $c\
 $cpp\
 $rust\
+$zig\
 $haskell\
 $python\
 [](fg:green bg:blue)\
@@ -111,6 +112,13 @@ symbol = " "
 style = "bg:green"
 version_format = "${major}.${minor}"
 format = "[[ $symbol($version)](fg:crust bg:green) ]($style)"
+
+[zig]
+symbol = " "
+style = "bg:green"
+version_format = "${major}.${minor}"
+format = "[[ $symbol($version)](fg:crust bg:green) ]($style)"
+detect_files = ["build.zig", "build.zig.zon"]
 
 [haskell]
 symbol = " "

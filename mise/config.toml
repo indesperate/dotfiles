@@ -40,6 +40,9 @@ exclude = ["/*"]  # Disable the automatic tree walk; deploy only explicit entrie
 # Herdr
 "~/.config/herdr/config.toml" = { source = "terminals/herdr/config.toml.tera", mode = "template", variants = [{ os = "linux" }, { os = "windows", target = "~/AppData/Roaming/herdr/config.toml" }] }
 
+# Jujutsu
+"~/.config/jj/config.toml" = { source = "cli/jj/config.toml.tera", mode = "template", variants = [{ os = "linux" }, { os = "windows", target = "~/AppData/Roaming/jj/config.toml" }] }
+
 # Lazygit
 "~/.config/lazygit/config.yml" = { source = "cli/lazygit/config.yml", variants = [{ os = "linux" }, { os = "windows", target = "~/AppData/Roaming/lazygit/config.yml" }] }
 
