@@ -24,7 +24,7 @@ fi
 export FZF_DEFAULT_OPTS_FILE="$HOME/.config/fzfrc"
 
 if command -v nvim >/dev/null 2>&1; then
-    export EDITOR=nvim
+    export EDITOR="$(command -v nvim)"
     export MANPAGER='nvim +Man!'
 fi
 
