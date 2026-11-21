@@ -28,16 +28,15 @@
     "npm:pi-vim-editor"
   ],
   "tidy": {
+    "style": "frame",
     "userMessageStyle": "rail",
-    "userMessagePaddingY": 0,
-    "userMessageColors": {
-      "rail": "#f5c2e7",
-      "rule": "#f5c2e7"
+    "userMessageFill": true,
+    "messageBorderColors": {
+      "user": "mdQuoteBorder"
     },
     "groupTools": false,
     "backgroundJobs": false,
     "codeBlocks": false,
-    "collapseTurns": "afterRun",
     "finalReplyStyle": "off"
   }
 }
