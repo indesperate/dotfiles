@@ -6,9 +6,9 @@ keybinds clear-defaults=true {
     pane {
         bind "Alt p" { SwitchToMode "normal"; }
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "normal"; }
-        bind "p" { TogglePanePinned; SwitchToMode "Normal"; }
+        bind "p" { TogglePanePinned; SwitchToMode "normal"; }
         bind "i" { SwitchToMode "normal"; }
-        bind "z" { TogglePaneFrames; SwitchToMode "Normal"; }
+        bind "z" { TogglePaneFrames; SwitchToMode "normal"; }
         bind "|" { NewPane "right"; SwitchToMode "normal"; }
         bind "-" { NewPane "down"; SwitchToMode "normal"; }
     }
@@ -28,10 +28,10 @@ keybinds clear-defaults=true {
     }
     resize {
         bind "i" { SwitchToMode "normal"; }
-        bind "h" { Resize "Increase left"; }
-        bind "j" { Resize "Increase down"; }
-        bind "k" { Resize "Increase up"; }
-        bind "l" { Resize "Increase right"; }
+        bind "h" { Resize "Increase Left"; }
+        bind "j" { Resize "Increase Down"; }
+        bind "k" { Resize "Increase Up"; }
+        bind "l" { Resize "Increase Right"; }
         bind "H" { Resize "Decrease Left"; }
         bind "J" { Resize "Decrease Down"; }
         bind "K" { Resize "Decrease Up"; }
@@ -53,7 +53,7 @@ keybinds clear-defaults=true {
         bind "[" { ScrollToPreviousPrompt; }
         bind "]" { ScrollToNextPrompt; }
         bind "m" { SelectCommandAtScrollPosition; }
-        bind "c" { CopyLastCommandOutput; SwitchToMode "Normal"; }
+        bind "c" { CopyLastCommandOutput; SwitchToMode "normal"; }
     }
     search {
         bind "i" { SwitchToMode "normal"; }
@@ -206,32 +206,6 @@ keybinds clear-defaults=true {
             SwitchToMode "normal"
         }
     }
-}
-
-// Plugin aliases - can be used to change the implementation of Zellij
-// changing these requires a restart to take effect
-plugins {
-    tab-bar location="zellij:tab-bar"
-    status-bar location="zellij:status-bar"
-    strider location="zellij:strider"
-    compact-bar location="zellij:compact-bar"
-    session-manager location="zellij:session-manager"
-    welcome-screen location="zellij:session-manager" {
-        welcome_screen true
-    }
-    filepicker location="zellij:strider" {
-        cwd "/"
-    }
-    configuration location="zellij:configuration"
-    plugin-manager location="zellij:plugin-manager"
-    about location="zellij:about"
-}
-
-// Plugins to load in the background when a new session starts
-load_plugins {
-    "zellij:link"
-    // "file:/path/to/my-plugin.wasm"
-    // "https://example.com/my-plugin.wasm"
 }
 
 // Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP

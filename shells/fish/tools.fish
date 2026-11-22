@@ -12,5 +12,5 @@ if command -q fzf
 end
 
 if command -q mise
-    mise activate fish --shims | source
+    mise activate fish | source
 end

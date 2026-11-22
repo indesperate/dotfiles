@@ -1,5 +1,5 @@
 local M = {}
-local terminal, origin
+local terminal, origin, client_id
 
 local function hide()
     if terminal and terminal:valid() then
@@ -16,19 +16,51 @@ function M.open(files)
         return
     end
     hide()
-    vim.cmd.edit({ args = { files[1] } })
+    vim.cmd.edit({ args = { files[1] }, magic = { file = false } })
     for i = 2, #files do
-        vim.fn.bufadd(files[i])
+        local buffer = vim.fn.bufadd(files[i])
+        vim.bo[buffer].buflisted = true
     end
 end
 
+local function discard_exited_terminal()
+    if not terminal or not terminal:buf_valid() then
+        return
+    end
+    local channel = vim.bo[terminal.buf].channel
+    if channel > 0 and vim.fn.jobwait({ channel }, 0)[1] == -1 then
+        return
+    end
+    if terminal:buf_valid() then
+        terminal:close()
+    end
+    terminal = nil
+    client_id = nil
+end
+
 function M.toggle(path)
-    if terminal and terminal:valid() then
+    path = path and vim.fn.fnamemodify(path, ":p")
+    discard_exited_terminal()
+    local visible = terminal and terminal:valid()
+    if visible and not path then
         hide()
         return
     end
-    origin = vim.api.nvim_get_current_win()
+    if not visible then
+        origin = vim.api.nvim_get_current_win()
+    end
     if terminal and terminal:buf_valid() then
+        if path then
+            vim.system(
+                { "ya", "emit-to", client_id, "cd", "--raw", path },
+                { text = true },
+                vim.schedule_wrap(function(result)
+                    if result.code ~= 0 then
+                        vim.notify("Yazi cd failed: " .. vim.trim(result.stderr), vim.log.levels.ERROR)
+                    end
+                end)
+            )
+        end
         terminal:show():focus()
         return
     end
@@ -36,7 +68,9 @@ function M.toggle(path)
     local windows = vim.fn.has("win32") == 1
     local editor = windows and "yazi-nvim.cmd" or "yazi-nvim"
     local path_separator = windows and ";" or ":"
-    terminal = Snacks.terminal.open({ "yazi", path or vim.fn.getcwd() }, {
+    local seconds, microseconds = vim.uv.gettimeofday()
+    client_id = ("%d%06d"):format(seconds, microseconds)
+    terminal = Snacks.terminal.open({ "yazi", "--client-id", client_id, path or vim.fn.getcwd() }, {
         env = {
             -- A command on PATH avoids shell-splitting executable and bridge paths in $EDITOR.
             EDITOR = editor,

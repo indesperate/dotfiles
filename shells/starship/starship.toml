@@ -17,7 +17,6 @@ $git_commit\
 $git_status\
 [](fg:yellow bg:green)\
 $c\
-$cpp\
 $rust\
 $zig\
 $haskell\

@@ -51,5 +51,5 @@ use std/clip copy52
 {% if os() == "windows" -%}
 $env.YAZI_FILE_ONE = "{{ env.USERPROFILE | replace(from="\\", to="/") }}/scoop/apps/git/current/usr/bin/file.exe"
 $env.SHELL = "nu"
-chcp 65001 | null
+chcp 65001 | ignore
 {% endif -%}

@@ -10,7 +10,7 @@ for _, path in ipairs(arg) do
 end
 if #files == 0 then
     if directory then
-        local result = vim.system({ "ya", "emit", "cd", directory }, { text = true }):wait()
+        local result = vim.system({ "ya", "emit", "cd", "--raw", directory }, { text = true }):wait()
         assert(result.code == 0, result.stderr)
     end
     return

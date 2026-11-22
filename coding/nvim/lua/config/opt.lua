@@ -66,4 +66,6 @@ if shell == "nu" or shell == "nu.exe" then
     vim.opt.shellcmdflag = "-c"
     vim.opt.shellquote = ""
     vim.opt.shellxquote = ""
+    vim.opt.shellredir = "out+err> %s"
+    vim.opt.shellpipe = "out+err> %s"
 end
