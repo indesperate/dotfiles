@@ -87,7 +87,7 @@ function M.toggle(path)
             border = "rounded",
             keys = {
                 term_normal = false,
-                hide_yazi = { "q", hide, mode = "t", desc = "Hide Yazi" },
+                hide_yazi = { "<C-q>", hide, mode = "t", desc = "Hide Yazi" },
             },
         },
     })
