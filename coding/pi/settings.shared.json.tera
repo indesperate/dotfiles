@@ -29,7 +29,6 @@
   ],
   "tidy": {
     "style": "frame",
-    "userMessageStyle": "rail",
     "userMessageFill": true,
     "messageBorderColors": {
       "user": "mdQuoteBorder"
@@ -37,6 +36,7 @@
     "groupTools": false,
     "backgroundJobs": false,
     "codeBlocks": false,
-    "finalReplyStyle": "off"
+    "finalReplyStyle": "rail",
+    "replyMetrics": true
   }
 }

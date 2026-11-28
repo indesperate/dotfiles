@@ -1,7 +1,7 @@
 # Pi-native adaptation of ~/.config/starship.toml (Catppuccin Mocha).
 # Keep the shell's colors and separators; show Pi session data.
 # Check glyph overhang in RecMonoDuotone and Maple Mono when changing icons.
-format = "[](maroon)$model$provider$thinking[](fg:maroon bg:yellow)$directory[](fg:yellow bg:green)$git_branch$git_commit$git_status[ ](bg:green)[](fg:green bg:lavender)$time[ ](fg:lavender)$activity\n${extension_status.usage}$tokens_per_second$fill$tokens$cache$cost$context"
+format = "[](maroon)$model$provider$thinking[](fg:maroon bg:yellow)$directory[](fg:yellow bg:green)$git_branch$git_commit$git_status[ ](bg:green)[](fg:green bg:lavender)$time[ ](fg:lavender)$activity\n${extension_status.usage}$fill$tokens$cache$cost$context"
 palette = "catppuccin_mocha"
 
 [provider]
@@ -20,6 +20,7 @@ google-vertex = "󰫢 "
 kimi-coding = "🌕 "
 moonshotai = "🌕 "
 moonshotai-cn = "🌕 "
+radius = "󰐷 "
 
 [model]
 format = "[$model]($style)"
@@ -57,12 +58,6 @@ renamed = "󰄾×${count}"
 deleted = "󰧵 ×${count}"
 style = "fg:crust bg:green"
 format = "[( $all_status)( $ahead_behind)]($style)"
-
-[tokens_per_second]
-format = "[ $symbol $rate TPS ]($style)"
-symbol = "💨"
-style = "fg:subtext1"
-disabled = false
 
 [tokens]
 format = "[ $symbol $total ]($style)"
@@ -120,7 +115,7 @@ symbol = ""
 style = "fg:crust bg:lavender"
 time_format = "%R"
 
-# Keep usage and throughput left and session totals right on the second row.
+# Keep usage left and session totals right on the second row.
 [fill]
 symbol = " "
 style = "none"
